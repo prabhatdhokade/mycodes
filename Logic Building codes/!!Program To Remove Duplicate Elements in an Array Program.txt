@@ -1,0 +1,59 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int j,k;
+    int arr[25],i,n;
+    cout<<"Enter the size of array:";
+    cin>>n;
+    cout<<"Enter the elements";
+    for(i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    cout<<"Original array";
+     for(i=0;i<n;i++)
+    {
+        cout<<"\n"<<arr[i];
+    }
+    cout<<"\nafter removing duplicate elements";
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;)
+        {
+            if(arr[i]==arr[j])
+            {
+                for(k=j;k<n;k++)
+                {
+                    arr[k]=arr[k+1];
+                }
+                 n--;
+            }
+            else
+            {
+             
+             j++;
+             
+            }
+        }
+    }
+    
+    
+    for(i=0;i<n;i++)
+    {
+        cout<<"\n"<<arr[i];
+    }
+    
+    
+   
+}

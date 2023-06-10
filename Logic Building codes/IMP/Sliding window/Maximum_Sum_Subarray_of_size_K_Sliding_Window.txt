@@ -1,0 +1,50 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+
+//Maximum minimum Both
+
+
+int main()
+{
+    int N;
+  cin>>N;
+  int input_arr[N];
+  for(int i=0;i<N;i++)
+    {
+        cin>> input_arr[i];
+    }
+  int K;//blcok sizwe
+  cin>>K;
+
+  int window_Start = 0;
+  int window_End= 0;
+  int MAX = 0;
+  int MIN; 
+  int sum = 0;
+
+ // while (window_End < N)
+  //{
+    for(window_End = 0; window_End < N; window_End++)
+    {   
+        sum += input_arr[window_End];
+
+         
+
+        if(window_End - window_Start + 1 >= K) {
+            
+           
+             MAX = max( sum, MAX );
+             MIN = min( sum, MIN);
+             sum -= input_arr[window_Start];
+             window_Start++;
+
+        }
+
+    }
+    
+  //}
+  cout<< MAX<<"\n"<<MIN;
+
+
+}

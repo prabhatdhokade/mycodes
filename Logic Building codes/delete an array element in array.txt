@@ -1,0 +1,47 @@
+#include<iostream>
+#include<stdio.h>
+#include<string.h>
+
+using namespace std;
+
+int main()
+{
+ int i,n,dl,p,flag=0;
+ int arr[25];
+ cout<<"enter the number";
+ cin>>n;
+ cout<<"enter the elements  in array";
+ for(i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+cout<<"Enter the elements to delete";
+cin>>dl;
+
+for(i=0;i<n;i++)
+{
+    if(arr[i]==dl)
+    {
+       flag=1;
+       p=i;
+       break;
+       
+    }
+}
+if(flag==1)
+{
+    for(i=p;i<n-1;i++)
+    {
+        arr[i]=arr[i+1];    
+    }
+    cout<<"The new array elements are \n";
+    for(i=0;i<n-1;i++)
+    {
+        cout<<arr[i];    
+    }
+}
+else
+{
+cout<<"element "<<dl<<" is not in array";
+}   
+}

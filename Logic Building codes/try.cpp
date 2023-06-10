@@ -1,0 +1,35 @@
+#include<iostream>
+  using namespace std;
+
+int main()
+{
+  int n;
+  cin>>n;
+  int input_arr[n];
+  for(int i=0;i<n;i++){ 
+    cin>> input_arr[i];
+  }
+
+  int output_arr[n];
+  
+  output_arr[0] = 1;
+  // following  step gives you  the left_products 
+  for (int i=1; i<n; i++) {
+    output_arr[i] = input_arr[i-1] * output_arr[i-1];
+    
+  }
+//multiply with R
+  int R = 1;
+  for (int i=n-1; i>=0; i-- ) { //loop starting from end
+    output_arr[i] = output_arr[i] * R;
+    R = R * input_arr[i];
+  }
+
+//time complexity is O(3n)
+
+  for (int i=0; i<n; i++){
+    cout<<output_arr[i]<<" ";
+  }
+
+  
+}

@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+  int n,a,b,c,d;
+  cin>>n;
+
+  a = n/100 ;
+  b = ( (n/10) %10);
+  c = n % 10;
+
+  d = (a * a * a) + (b * b * b) + (c * c * c);
+
+  if( n==d ) {
+
+    cout<< "1";
+  }
+  else
+  cout<< "0";
+}
