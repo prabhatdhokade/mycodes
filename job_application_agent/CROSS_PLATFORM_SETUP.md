@@ -1,6 +1,6 @@
-# 🪟 Windows Setup Guide - Optimized Job Hunter
+# 🌐 Cross-Platform Setup Guide - Optimized Job Hunter
 
-**Quick setup guide for Windows users to avoid Unicode issues and get started fast**
+**Universal setup guide for Mac, Windows, and Linux users with automatic Unicode handling**
 
 ## ⚡ Quick Start (5 Minutes)
 
@@ -13,10 +13,10 @@ cd job_application_agent
 run_windows.bat
 ```
 
-### 2. **Or Use Windows-Compatible Script**
-```powershell
-# Run optimized version with Windows support
-python optimized_main_windows.py --hunt-once
+### 2. **Or Use Cross-Platform Script**
+```bash
+# Run optimized version with automatic platform detection
+python optimized_main.py --hunt-once
 ```
 
 ## 🔧 If You See Unicode Errors
@@ -34,31 +34,31 @@ run_windows.bat
 # Set console to UTF-8
 chcp 65001
 
-# Then run the Windows version
-python optimized_main_windows.py --profile
+# Then run the cross-platform version
+python optimized_main.py --profile
 ```
 
 ### **Option 3: Use PowerShell**
 ```powershell
 # PowerShell handles Unicode better
 powershell
-python optimized_main_windows.py --test-forms
+python optimized_main.py --test-forms
 ```
 
-## 🎯 Smart Commands for Windows
+## 🎯 Smart Commands (Cross-Platform)
 
-```batch
-# Windows-compatible commands (no Unicode errors)
-python optimized_main_windows.py --hunt              # Start hunting
-python optimized_main_windows.py --hunt-once         # Single session
-python optimized_main_windows.py --status            # Check status
-python optimized_main_windows.py --profile           # Show profile
-python optimized_main_windows.py --test-forms        # Test answers
-python optimized_main_windows.py --diagnose          # Diagnostics
+```bash
+# Cross-platform commands (automatic Unicode handling)
+python optimized_main.py --hunt              # Start hunting
+python optimized_main.py --hunt-once         # Single session
+python optimized_main.py --status            # Check status
+python optimized_main.py --profile           # Show profile
+python optimized_main.py --test-forms        # Test answers
+python optimized_main.py --diagnose          # Diagnostics
 
 # Platform-specific hunting
-python optimized_main_windows.py --hunt-once --platform naukri
-python optimized_main_windows.py --hunt-once --platform linkedin
+python optimized_main.py --hunt-once --platform naukri
+python optimized_main.py --hunt-once --platform linkedin
 ```
 
 ## 📊 What You'll See (Windows-Compatible Output)
@@ -140,15 +140,15 @@ notepad .env
 ```
 
 ### **2. Test Your Setup**
-```batch
-# Test Windows compatibility
-python optimized_main_windows.py --diagnose
+```bash
+# Test cross-platform compatibility
+python optimized_main.py --diagnose
 
 # Test smart form handling
-python optimized_main_windows.py --test-forms
+python optimized_main.py --test-forms
 
 # Test profile display
-python optimized_main_windows.py --profile
+python optimized_main.py --profile
 ```
 
 ### **3. Configure Credentials**
@@ -162,12 +162,12 @@ RESUME_PATH=C:\path\to\your\resume.pdf
 ```
 
 ### **4. Start Job Hunting**
-```batch
+```bash
 # Single hunt to test
-python optimized_main_windows.py --hunt-once --platform naukri
+python optimized_main.py --hunt-once --platform naukri
 
 # If successful, start automated hunting
-python optimized_main_windows.py --hunt
+python optimized_main.py --hunt
 ```
 
 ## ❓ Common Windows Issues & Solutions
@@ -185,22 +185,26 @@ pip install selenium beautifulsoup4 requests python-dotenv schedule
 ```
 
 ### **Issue 3: "ChromeDriver issues"**
-```batch
+```bash
 # Run auto-fix
-python optimized_main_windows.py --diagnose
+python optimized_main.py --diagnose
 
 # Or install manually
 python troubleshoot.py
 ```
 
 ### **Issue 4: Still seeing Unicode errors**
-```batch
+```bash
 # Use the launcher script instead
 run_windows.bat
 
-# Or set environment variable
+# Or set environment variable (Windows)
 set PYTHONIOENCODING=utf-8
-python optimized_main_windows.py --profile
+python optimized_main.py --profile
+
+# Or export environment variable (Mac/Linux)
+export PYTHONIOENCODING=utf-8
+python optimized_main.py --profile
 ```
 
 ## 🎯 Windows-Specific Features
@@ -254,22 +258,22 @@ python optimized_main_windows.py --profile
 ## 📞 Windows Support
 
 ### **Getting Help:**
-1. **Run diagnostics:** `python optimized_main_windows.py --diagnose`
+1. **Run diagnostics:** `python optimized_main.py --diagnose`
 2. **Check logs:** Look in `logs/` folder
-3. **Test forms:** `python optimized_main_windows.py --test-forms`
+3. **Test forms:** `python optimized_main.py --test-forms`
 4. **Use launcher:** Double-click `run_windows.bat`
 
 ### **Common Solutions:**
-- **Encoding issues:** Use `optimized_main_windows.py` instead of `optimized_main.py`
+- **Encoding issues:** Use `optimized_main.py` (has automatic platform detection)
 - **Console problems:** Use `run_windows.bat` launcher
 - **Path issues:** Use full paths in `.env` file
 - **Permission issues:** Run from user folder, not system folders
 
 ## 🎉 Windows Success Tips
 
-### **1. Use the Right Script**
-- ✅ `optimized_main_windows.py` - Windows-compatible
-- ❌ `optimized_main.py` - May have Unicode issues
+### **1. Use the Unified Script**
+- ✅ `optimized_main.py` - Cross-platform compatible (Mac, Windows, Linux)
+- ✅ Automatic Unicode detection and handling
 
 ### **2. Use the Launcher**
 - ✅ `run_windows.bat` - Easy menu interface
@@ -282,19 +286,19 @@ python optimized_main_windows.py --profile
 - ✅ Resume path is correct
 
 ### **4. Start Small**
-```batch
+```bash
 # Test first
-python optimized_main_windows.py --test-forms
+python optimized_main.py --test-forms
 
 # Then try single hunt
-python optimized_main_windows.py --hunt-once --platform naukri
+python optimized_main.py --hunt-once --platform naukri
 
 # Finally start automated hunting
-python optimized_main_windows.py --hunt
+python optimized_main.py --hunt
 ```
 
 ---
 
-**🎯 Your Windows-compatible AI job hunter is ready!**
+**🎯 Your cross-platform AI job hunter is ready!**
 
-No more Unicode errors, just smooth job hunting automation that works perfectly on Windows.
+No more Unicode errors, just smooth job hunting automation that works perfectly on Mac, Windows, and Linux.

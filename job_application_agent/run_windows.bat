@@ -1,9 +1,9 @@
 @echo off
-:: Windows Job Application Agent Runner
+:: Cross-Platform Job Application Agent Runner
 :: Sets up proper Unicode support and runs the optimized version
 
-echo [TARGET] Job Application Agent - Windows Launcher
-echo ================================================
+echo [TARGET] Job Application Agent - Cross-Platform Launcher
+echo ===============================================
 
 :: Set console to UTF-8
 chcp 65001 > nul
@@ -18,8 +18,8 @@ if %errorlevel% neq 0 (
 )
 
 :: Check if we're in the right directory
-if not exist "optimized_main_windows.py" (
-    echo [ERROR] optimized_main_windows.py not found
+if not exist "optimized_main.py" (
+    echo [ERROR] optimized_main.py not found
     echo Please run this script from the job_application_agent directory
     pause
     exit /b 1
@@ -42,23 +42,23 @@ echo 0. Exit
 set /p choice="Enter your choice (0-9): "
 
 if "%choice%"=="1" (
-    python optimized_main_windows.py --hunt
+    python optimized_main.py --hunt
 ) else if "%choice%"=="2" (
-    python optimized_main_windows.py --hunt-once
+    python optimized_main.py --hunt-once
 ) else if "%choice%"=="3" (
-    python optimized_main_windows.py --status
+    python optimized_main.py --status
 ) else if "%choice%"=="4" (
-    python optimized_main_windows.py --profile
+    python optimized_main.py --profile
 ) else if "%choice%"=="5" (
-    python optimized_main_windows.py --test-forms
+    python optimized_main.py --test-forms
 ) else if "%choice%"=="6" (
-    python optimized_main_windows.py --diagnose
+    python optimized_main.py --diagnose
 ) else if "%choice%"=="7" (
-    python optimized_main_windows.py --hunt-once --platform naukri
+    python optimized_main.py --hunt-once --platform naukri
 ) else if "%choice%"=="8" (
-    python optimized_main_windows.py --hunt-once --platform linkedin
+    python optimized_main.py --hunt-once --platform linkedin
 ) else if "%choice%"=="9" (
-    python optimized_main_windows.py
+    python optimized_main.py
 ) else if "%choice%"=="0" (
     echo [SUCCESS] Goodbye!
     exit /b 0
