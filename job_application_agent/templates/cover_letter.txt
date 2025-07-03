@@ -1,0 +1,29 @@
+Dear Hiring Manager,
+
+I am writing to express my strong interest in the {job_title} position at {company_name}. With {experience_years} years of experience in software development and a proven track record in {key_skills}, I am confident that I would be a valuable addition to your team.
+
+In my current role as {current_role}, I have successfully:
+- Developed and maintained scalable applications using {primary_technologies}
+- Collaborated with cross-functional teams to deliver high-quality software solutions
+- Implemented best practices in code development, testing, and deployment
+- Worked with {database_technologies} and cloud platforms like {cloud_platforms}
+
+My technical expertise includes:
+- Programming Languages: {programming_languages}
+- Frameworks & Libraries: {frameworks}
+- Database Management: {databases}
+- Cloud & DevOps: {devops_tools}
+- Version Control: Git, GitHub, GitLab
+
+I am particularly drawn to {company_name} because of your reputation for innovation and commitment to {company_values}. I am excited about the opportunity to contribute to your team and help drive the development of cutting-edge solutions.
+
+I have attached my resume for your review and would welcome the opportunity to discuss how my skills and experience align with your team's needs. Thank you for considering my application.
+
+Best regards,
+{applicant_name}
+{phone_number}
+{email_address}
+
+---
+This cover letter was generated automatically by Job Application Agent.
+Please review and customize as needed before submission.
