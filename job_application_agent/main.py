@@ -159,6 +159,8 @@ Examples:
   python main.py --run-once --platform naukri  # Run on specific platform
   python main.py --status              # Check status
   python main.py --stop                # Stop the scheduler
+  python main.py --diagnose            # Run system diagnostics
+  python main.py --config              # Show configuration
         """
     )
     
@@ -184,6 +186,9 @@ Examples:
     parser.add_argument('--test', action='store_true',
                        help='Run in test mode (no actual applications)')
     
+    parser.add_argument('--diagnose', action='store_true',
+                       help='Run system diagnostics to troubleshoot issues')
+    
     args = parser.parse_args()
     
     # Create agent instance
@@ -199,6 +204,10 @@ Examples:
         elif args.stop:
             stop_job_scheduler()
             print("Scheduler stopped successfully")
+        
+        elif args.diagnose:
+            from utils.diagnostics import main as run_diagnostics
+            run_diagnostics()
         
         elif args.run_once:
             platforms = args.platform if args.platform else None

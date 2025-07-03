@@ -239,33 +239,118 @@ PLATFORM_CONFIG = {
 
 ## 🔍 Troubleshooting
 
-### Common Issues
+### Quick Fix for Browser Issues
+If you encounter ChromeDriver or browser initialization errors:
 
-1. **Login Failures**
+```bash
+# Run the automatic troubleshooter
+python troubleshoot.py
+
+# Or run comprehensive diagnostics
+python main.py --diagnose
+```
+
+### Platform-Specific Fixes
+
+#### **Mac Users (especially M1/M2)**
+```bash
+# Clear caches and fix permissions
+rm -rf ~/.wdm ~/.chrome_drivers
+python troubleshoot.py
+
+# Install ChromeDriver via Homebrew
+brew install chromedriver
+
+# For Apple Silicon, ensure ARM64 compatibility
+arch -arm64 python main.py --run-once
+```
+
+#### **Windows Users**
+```bash
+# Run as Administrator
+python troubleshoot.py
+
+# Manually download ChromeDriver to C:\chromedriver\
+# Add to Windows Defender exclusions
+```
+
+#### **Linux Users**
+```bash
+# Install Chrome and ChromeDriver
+sudo apt-get update
+sudo apt-get install google-chrome-stable chromium-chromedriver
+
+# Fix permissions
+sudo chmod +x /usr/bin/chromedriver
+```
+
+### Common Issues and Solutions
+
+1. **Browser Initialization Errors**
+   ```bash
+   # Error: Exec format error (Mac) or %1 is not a valid Win32 application (Windows)
+   python troubleshoot.py  # Automatic fix
+   
+   # Manual fix - clear all caches
+   rm -rf ~/.wdm ~/.chrome_drivers  # Mac/Linux
+   del %TEMP%\.wdm  # Windows
+   ```
+
+2. **ChromeDriver Version Mismatch**
+   ```bash
+   # Update Chrome browser first, then:
+   python troubleshoot.py
+   ```
+
+3. **Permission Denied (Mac/Linux)**
+   ```bash
+   chmod +x ~/.chrome_drivers/*/chromedriver
+   # Or run troubleshoot.py to fix all permissions
+   ```
+
+4. **Login Failures**
    - Check credentials in `.env` file
    - Verify account isn't locked
    - Handle 2FA manually if required
+   - Check for CAPTCHA requirements
 
-2. **No Jobs Found**
-   - Broaden search criteria
+5. **No Jobs Found**
+   - Broaden search criteria in `config/profile_config.py`
    - Check target roles and locations
    - Verify platform availability
-
-3. **Application Failures**
    - Check internet connection
-   - Verify resume file path
-   - Monitor platform changes
 
-4. **Browser Issues**
-   - Update Chrome browser
-   - Check ChromeDriver compatibility
-   - Clear browser cache
+6. **Application Failures**
+   - Check internet connection
+   - Verify resume file path in `.env`
+   - Monitor platform changes
+   - Check application limits
 
 ### Debug Mode
 ```bash
 # Run with verbose logging
 LOG_LEVEL=DEBUG python main.py --run-once
+
+# Test browser only
+python main.py --diagnose
+
+# Quick troubleshoot
+python troubleshoot.py
 ```
+
+### System Requirements Check
+```bash
+# Check if your system is compatible
+python main.py --diagnose
+```
+
+This will check:
+- Python version compatibility
+- Required dependencies
+- Chrome browser installation
+- ChromeDriver availability
+- Network connectivity
+- File permissions
 
 ## 📝 Customization
 
