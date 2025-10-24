@@ -1,0 +1,21 @@
+customer_id,product_name,sale_amount,sale_date
+1001,Laptop Pro,12000,2024-01-15
+1002,Wireless Mouse,2500,2024-01-16
+1003,Gaming Keyboard,8000,2024-01-17
+1001,Monitor 24inch,15000,2024-01-18
+1004,Mechanical Keyboard,12000,2024-01-19
+1002,USB Cable,500,2024-01-20
+1005,Graphics Card,25000,2024-01-21
+1003,Webcam HD,3000,2024-01-22
+1001,SSD 1TB,8000,2024-01-23
+1006,Bluetooth Headphones,6000,2024-01-24
+1004,Desk Lamp,1500,2024-01-25
+1002,Wireless Mouse,2500,2024-01-26
+1007,Gaming Chair,18000,2024-01-27
+1003,Monitor Stand,2000,2024-01-28
+1005,External Hard Drive,4000,2024-01-29
+1001,Wireless Mouse,2500,2024-01-30
+1008,Tablet 10inch,12000,2024-01-31
+1006,Phone Case,800,2024-02-01
+1004,Screen Protector,300,2024-02-02
+1009,Smart Watch,15000,2024-02-03

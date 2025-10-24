@@ -1,0 +1,8 @@
+customer_id,product_name,amount,sale_date,total_with_tax
+1005,Graphics Card,25000,2024-01-21,29500.0
+1007,Gaming Chair,18000,2024-01-27,21240.0
+1001,Monitor 24inch,15000,2024-01-18,17700.0
+1009,Smart Watch,15000,2024-02-03,17700.0
+1001,Laptop Pro,12000,2024-01-15,14160.0
+1004,Mechanical Keyboard,12000,2024-01-19,14160.0
+1008,Tablet 10inch,12000,2024-01-31,14160.0

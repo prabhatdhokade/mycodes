@@ -1,0 +1,49 @@
+# Example configuration for Excel output
+
+input_files:
+  - data/input_sales.csv
+
+operations:
+  # Clean and standardize data
+  - type: rename_columns
+    mapping:
+      customer_id: customer_id
+      product_name: product
+      sale_amount: amount
+      sale_date: date
+
+  # Remove null values
+  - type: drop_nulls
+
+  # Add calculated columns
+  - type: add_column
+    name: total_with_tax
+    formula: "amount * 1.18"
+
+  - type: add_column
+    name: discount_amount
+    formula: "amount * 0.1"
+
+  - type: add_column
+    name: final_amount
+    formula: "total_with_tax - discount_amount"
+
+  # Remove duplicates
+  - type: drop_duplicates
+    subset: ["customer_id", "product"]
+
+  # Sort by date
+  - type: sort_data
+    by: ["date"]
+    ascending: true
+
+  # Apply string functions
+  - type: apply_function
+    column: product
+    function: upper
+
+output:
+  type: excel
+  path: data/processed_sales_report.xlsx
+  sheet_name: Sales_Report
+  index: false

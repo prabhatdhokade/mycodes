@@ -1,0 +1,26 @@
+input_files:
+  - data/input_sales.csv
+  - data/input_customers.xlsx
+
+operations:
+  - type: rename_columns
+    mapping:
+      customer_id: customer_id
+      product_name: product
+      sale_amount: amount
+      sale_date: date
+
+  - type: filter_rows
+    condition: "amount > 5000"
+
+  - type: add_column
+    name: total_with_tax
+    formula: "amount * 1.18"
+
+  - type: merge
+    on: customer_id
+    how: left
+
+output:
+  type: csv
+  path: data/test_output.csv

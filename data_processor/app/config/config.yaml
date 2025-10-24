@@ -1,0 +1,66 @@
+# Example configuration file for data processing pipeline
+
+# Input files to process
+input_files:
+  - data/input_sales.csv
+  - data/input_customers.xlsx
+
+# Operations to perform (in order)
+operations:
+  # Rename columns for consistency
+  - type: rename_columns
+    mapping:
+      customer_id: customer_id
+      product_name: product
+      sale_amount: amount
+      sale_date: date
+      customer_name: name
+      customer_email: email
+
+  # Filter rows based on condition
+  - type: filter_rows
+    condition: "amount > 5000"
+
+  # Add calculated column
+  - type: add_column
+    name: total_with_tax
+    formula: "amount * 1.18"
+
+  # Add profit margin column
+  - type: add_column
+    name: profit_margin
+    formula: "amount * 0.15"
+
+  # Remove duplicate rows
+  - type: drop_duplicates
+    subset: ["customer_id", "product"]
+
+  # Sort by amount descending
+  - type: sort_data
+    by: ["amount"]
+    ascending: false
+
+  # Merge with customer data
+  - type: merge
+    on: customer_id
+    how: left
+
+  # Select only relevant columns
+  - type: select_columns
+    columns:
+      - customer_id
+      - customer_name
+      - customer_email
+      - product
+      - amount
+      - total_with_tax
+      - profit_margin
+      - date
+
+# Output configuration
+output:
+  type: csv
+  path: data/processed_output.csv
+  # Additional parameters for CSV output
+  index: false
+  encoding: utf-8

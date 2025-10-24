@@ -1,0 +1,54 @@
+# Example configuration for SQLite output
+
+input_files:
+  - data/input_sales.csv
+  - data/input_customers.xlsx
+
+operations:
+  # Rename columns
+  - type: rename_columns
+    mapping:
+      customer_id: customer_id
+      product_name: product
+      sale_amount: amount
+      sale_date: date
+      customer_name: name
+      customer_email: email
+
+  # Filter high-value transactions
+  - type: filter_rows
+    condition: "amount > 10000"
+
+  # Add calculated columns
+  - type: add_column
+    name: total_with_tax
+    formula: "amount * 1.18"
+
+  - type: add_column
+    name: commission
+    formula: "amount * 0.05"
+
+  # Merge customer data
+  - type: merge
+    on: customer_id
+    how: inner
+
+  # Aggregate by customer
+  - type: aggregate
+    group_by: ["customer_id", "customer_name", "customer_email"]
+    aggregations:
+      amount: "sum"
+      total_with_tax: "sum"
+      commission: "sum"
+      product: "count"
+
+  # Sort by total amount
+  - type: sort_data
+    by: ["amount"]
+    ascending: false
+
+output:
+  type: sqlite
+  path: data/processed_data.db
+  table_name: high_value_customers
+  if_exists: replace

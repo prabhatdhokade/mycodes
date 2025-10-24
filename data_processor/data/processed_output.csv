@@ -1,0 +1,11 @@
+customer_id,customer_name,customer_email,product,amount,total_with_tax,profit_margin,date
+1005,David Brown,david.brown@email.com,Graphics Card,25000,29500.0,3750.0,2024-01-21
+1007,Tom Miller,tom.miller@email.com,Gaming Chair,18000,21240.0,2700.0,2024-01-27
+1009,Chris Taylor,chris.taylor@email.com,Smart Watch,15000,17700.0,2250.0,2024-02-03
+1001,John Smith,john.smith@email.com,Monitor 24inch,15000,17700.0,2250.0,2024-01-18
+1008,Anna Garcia,anna.garcia@email.com,Tablet 10inch,12000,14160.0,1800.0,2024-01-31
+1001,John Smith,john.smith@email.com,Laptop Pro,12000,14160.0,1800.0,2024-01-15
+1004,Emily Davis,emily.davis@email.com,Mechanical Keyboard,12000,14160.0,1800.0,2024-01-19
+1003,Mike Wilson,mike.wilson@email.com,Gaming Keyboard,8000,9440.0,1200.0,2024-01-17
+1001,John Smith,john.smith@email.com,SSD 1TB,8000,9440.0,1200.0,2024-01-23
+1006,Lisa Anderson,lisa.anderson@email.com,Bluetooth Headphones,6000,7080.0,900.0,2024-01-24
