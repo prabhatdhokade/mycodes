@@ -15,7 +15,7 @@ from app.config import settings
 if __name__ == "__main__":
     print("🚛 Starting Fleet Weather Alert System...")
     print(f"   Host: {settings.host}")
-    print(f"   Port: {settings.port}")
+    print(f"   Port: 8001")
     print(f"   Debug: {settings.debug}")
     print(f"   Database: {settings.database_url}")
     print()
@@ -23,7 +23,7 @@ if __name__ == "__main__":
     uvicorn.run(
         "app.main:app",
         host=settings.host,
-        port=settings.port,
+        port=8001,
         reload=settings.debug,
         log_level=settings.log_level.lower()
     )

@@ -5,7 +5,6 @@ from sqlalchemy.orm import Session
 from typing import List, Dict, Any
 from datetime import datetime, timedelta
 import json
-import redis
 from app.database import get_db
 from app.config import settings
 
@@ -14,7 +13,10 @@ router = APIRouter(prefix="/hot-topics", tags=["hot-topics"])
 # Redis client for caching
 redis_client = None
 try:
+    import redis
     redis_client = redis.from_url(settings.redis_url)
+except ImportError:
+    print("Redis not installed, caching disabled")
 except Exception as e:
     print(f"Redis not available: {e}")
 

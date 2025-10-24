@@ -5,7 +5,7 @@ import json
 import time
 from datetime import datetime
 
-BASE_URL = "http://localhost:8000"
+BASE_URL = "http://localhost:8001"
 
 def test_api_endpoints():
     """Test all API endpoints."""
