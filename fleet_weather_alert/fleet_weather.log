@@ -1,0 +1,140 @@
+2025-10-24 18:46:50,312 - app.main - INFO - Starting Fleet Weather Alert System...
+2025-10-24 18:46:50,379 - app.main - INFO - Database tables created/verified
+2025-10-24 18:46:50,423 - app.main - INFO - Initializing sample data...
+2025-10-24 18:46:50,471 - app.services.data_loader - INFO - Loaded 8 operators and 15 trucks
+2025-10-24 18:46:50,472 - app.main - INFO - Sample data loaded successfully
+2025-10-24 18:46:50,475 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:46:50,475 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:46:50,476 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:46:50,477 - apscheduler.scheduler - INFO - Added job "Weather Monitoring Job" to job store "default"
+2025-10-24 18:46:50,477 - apscheduler.scheduler - INFO - Added job "Notification Processing Job" to job store "default"
+2025-10-24 18:46:50,477 - apscheduler.scheduler - INFO - Added job "Daily Cleanup Job" to job store "default"
+2025-10-24 18:46:50,477 - apscheduler.scheduler - INFO - Scheduler started
+2025-10-24 18:46:50,481 - app.services.scheduler - INFO - Scheduler started successfully
+2025-10-24 18:46:50,481 - app.services.scheduler - INFO - Weather monitoring interval: 300 seconds
+2025-10-24 18:46:50,481 - app.main - INFO - Scheduler started
+2025-10-24 18:46:50,481 - app.main - INFO - Application startup completed
+2025-10-24 18:46:50,676 - app.main - INFO - Starting Fleet Weather Alert System...
+2025-10-24 18:46:50,682 - app.main - INFO - Database tables created/verified
+2025-10-24 18:46:50,739 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:46:50,740 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:46:50,740 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:46:50,741 - apscheduler.scheduler - INFO - Added job "Weather Monitoring Job" to job store "default"
+2025-10-24 18:46:50,741 - apscheduler.scheduler - INFO - Added job "Notification Processing Job" to job store "default"
+2025-10-24 18:46:50,741 - apscheduler.scheduler - INFO - Added job "Daily Cleanup Job" to job store "default"
+2025-10-24 18:46:50,741 - apscheduler.scheduler - INFO - Scheduler started
+2025-10-24 18:46:50,742 - app.services.scheduler - INFO - Scheduler started successfully
+2025-10-24 18:46:50,742 - app.services.scheduler - INFO - Weather monitoring interval: 300 seconds
+2025-10-24 18:46:50,742 - app.main - INFO - Scheduler started
+2025-10-24 18:46:50,742 - app.main - INFO - Application startup completed
+2025-10-24 18:46:50,743 - app.main - INFO - Shutting down Fleet Weather Alert System...
+2025-10-24 18:46:50,743 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-10-24 18:46:50,746 - app.services.scheduler - INFO - Scheduler stopped successfully
+2025-10-24 18:46:50,746 - app.main - INFO - Scheduler stopped
+2025-10-24 18:46:50,746 - app.main - INFO - Application shutdown completed
+2025-10-24 18:47:00,456 - app.main - INFO - Shutting down Fleet Weather Alert System...
+2025-10-24 18:47:00,456 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-10-24 18:47:00,459 - app.services.scheduler - INFO - Scheduler stopped successfully
+2025-10-24 18:47:00,459 - app.main - INFO - Scheduler stopped
+2025-10-24 18:47:00,459 - app.main - INFO - Application shutdown completed
+2025-10-24 18:47:02,231 - app.main - INFO - Starting Fleet Weather Alert System...
+2025-10-24 18:47:02,238 - app.main - INFO - Database tables created/verified
+2025-10-24 18:47:02,277 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:47:02,278 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:47:02,278 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:47:02,279 - apscheduler.scheduler - INFO - Added job "Weather Monitoring Job" to job store "default"
+2025-10-24 18:47:02,279 - apscheduler.scheduler - INFO - Added job "Notification Processing Job" to job store "default"
+2025-10-24 18:47:02,279 - apscheduler.scheduler - INFO - Added job "Daily Cleanup Job" to job store "default"
+2025-10-24 18:47:02,279 - apscheduler.scheduler - INFO - Scheduler started
+2025-10-24 18:47:02,285 - app.services.scheduler - INFO - Scheduler started successfully
+2025-10-24 18:47:02,285 - app.services.scheduler - INFO - Weather monitoring interval: 300 seconds
+2025-10-24 18:47:02,285 - app.main - INFO - Scheduler started
+2025-10-24 18:47:02,285 - app.main - INFO - Application startup completed
+2025-10-24 18:47:02,286 - app.main - INFO - Shutting down Fleet Weather Alert System...
+2025-10-24 18:47:02,286 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-10-24 18:47:02,286 - app.services.scheduler - INFO - Scheduler stopped successfully
+2025-10-24 18:47:02,286 - app.main - INFO - Scheduler stopped
+2025-10-24 18:47:02,286 - app.main - INFO - Application shutdown completed
+2025-10-24 18:47:02,642 - app.main - INFO - Starting Fleet Weather Alert System...
+2025-10-24 18:47:02,649 - app.main - INFO - Database tables created/verified
+2025-10-24 18:47:02,678 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:47:02,678 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:47:02,679 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:47:02,679 - apscheduler.scheduler - INFO - Added job "Weather Monitoring Job" to job store "default"
+2025-10-24 18:47:02,680 - apscheduler.scheduler - INFO - Added job "Notification Processing Job" to job store "default"
+2025-10-24 18:47:02,680 - apscheduler.scheduler - INFO - Added job "Daily Cleanup Job" to job store "default"
+2025-10-24 18:47:02,680 - apscheduler.scheduler - INFO - Scheduler started
+2025-10-24 18:47:02,684 - app.services.scheduler - INFO - Scheduler started successfully
+2025-10-24 18:47:02,684 - app.services.scheduler - INFO - Weather monitoring interval: 300 seconds
+2025-10-24 18:47:02,684 - app.main - INFO - Scheduler started
+2025-10-24 18:47:02,684 - app.main - INFO - Application startup completed
+2025-10-24 18:47:06,749 - app.main - INFO - Starting Fleet Weather Alert System...
+2025-10-24 18:47:06,752 - app.main - INFO - Database tables created/verified
+2025-10-24 18:47:06,770 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:47:06,771 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:47:06,771 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:47:06,772 - apscheduler.scheduler - INFO - Added job "Weather Monitoring Job" to job store "default"
+2025-10-24 18:47:06,772 - apscheduler.scheduler - INFO - Added job "Notification Processing Job" to job store "default"
+2025-10-24 18:47:06,772 - apscheduler.scheduler - INFO - Added job "Daily Cleanup Job" to job store "default"
+2025-10-24 18:47:06,772 - apscheduler.scheduler - INFO - Scheduler started
+2025-10-24 18:47:06,774 - app.services.scheduler - INFO - Scheduler started successfully
+2025-10-24 18:47:06,774 - app.services.scheduler - INFO - Weather monitoring interval: 300 seconds
+2025-10-24 18:47:06,774 - app.main - INFO - Scheduler started
+2025-10-24 18:47:06,774 - app.main - INFO - Application startup completed
+2025-10-24 18:47:19,733 - app.main - INFO - Shutting down Fleet Weather Alert System...
+2025-10-24 18:47:19,734 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-10-24 18:47:19,735 - app.services.scheduler - INFO - Scheduler stopped successfully
+2025-10-24 18:47:19,735 - app.main - INFO - Scheduler stopped
+2025-10-24 18:47:19,735 - app.main - INFO - Application shutdown completed
+2025-10-24 18:47:27,505 - app.main - INFO - Shutting down Fleet Weather Alert System...
+2025-10-24 18:47:27,505 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-10-24 18:47:27,505 - app.services.scheduler - INFO - Scheduler stopped successfully
+2025-10-24 18:47:27,505 - app.main - INFO - Scheduler stopped
+2025-10-24 18:47:27,505 - app.main - INFO - Application shutdown completed
+2025-10-24 18:47:29,427 - app.main - INFO - Starting Fleet Weather Alert System...
+2025-10-24 18:47:29,434 - app.main - INFO - Database tables created/verified
+2025-10-24 18:47:29,485 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:47:29,486 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:47:29,486 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:47:29,487 - apscheduler.scheduler - INFO - Added job "Weather Monitoring Job" to job store "default"
+2025-10-24 18:47:29,487 - apscheduler.scheduler - INFO - Added job "Notification Processing Job" to job store "default"
+2025-10-24 18:47:29,490 - apscheduler.scheduler - INFO - Added job "Daily Cleanup Job" to job store "default"
+2025-10-24 18:47:29,490 - apscheduler.scheduler - INFO - Scheduler started
+2025-10-24 18:47:29,494 - app.services.scheduler - INFO - Scheduler started successfully
+2025-10-24 18:47:29,494 - app.services.scheduler - INFO - Weather monitoring interval: 300 seconds
+2025-10-24 18:47:29,494 - app.main - INFO - Scheduler started
+2025-10-24 18:47:29,494 - app.main - INFO - Application startup completed
+2025-10-24 18:47:29,622 - app.main - INFO - Starting Fleet Weather Alert System...
+2025-10-24 18:47:29,628 - app.main - INFO - Database tables created/verified
+2025-10-24 18:47:29,670 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:47:29,670 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:47:29,670 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:47:29,674 - apscheduler.scheduler - INFO - Added job "Weather Monitoring Job" to job store "default"
+2025-10-24 18:47:29,674 - apscheduler.scheduler - INFO - Added job "Notification Processing Job" to job store "default"
+2025-10-24 18:47:29,675 - apscheduler.scheduler - INFO - Added job "Daily Cleanup Job" to job store "default"
+2025-10-24 18:47:29,675 - apscheduler.scheduler - INFO - Scheduler started
+2025-10-24 18:47:29,675 - app.services.scheduler - INFO - Scheduler started successfully
+2025-10-24 18:47:29,675 - app.services.scheduler - INFO - Weather monitoring interval: 300 seconds
+2025-10-24 18:47:29,675 - app.main - INFO - Scheduler started
+2025-10-24 18:47:29,675 - app.main - INFO - Application startup completed
+2025-10-24 18:47:29,676 - app.main - INFO - Shutting down Fleet Weather Alert System...
+2025-10-24 18:47:29,676 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-10-24 18:47:29,679 - app.services.scheduler - INFO - Scheduler stopped successfully
+2025-10-24 18:47:29,679 - app.main - INFO - Scheduler stopped
+2025-10-24 18:47:29,679 - app.main - INFO - Application shutdown completed
+2025-10-24 18:47:39,044 - app.main - INFO - Starting Fleet Weather Alert System...
+2025-10-24 18:47:39,051 - app.main - INFO - Database tables created/verified
+2025-10-24 18:47:39,089 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:47:39,090 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:47:39,094 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-10-24 18:47:39,095 - apscheduler.scheduler - INFO - Added job "Weather Monitoring Job" to job store "default"
+2025-10-24 18:47:39,095 - apscheduler.scheduler - INFO - Added job "Notification Processing Job" to job store "default"
+2025-10-24 18:47:39,096 - apscheduler.scheduler - INFO - Added job "Daily Cleanup Job" to job store "default"
+2025-10-24 18:47:39,096 - apscheduler.scheduler - INFO - Scheduler started
+2025-10-24 18:47:39,099 - app.services.scheduler - INFO - Scheduler started successfully
+2025-10-24 18:47:39,099 - app.services.scheduler - INFO - Weather monitoring interval: 300 seconds
+2025-10-24 18:47:39,099 - app.main - INFO - Scheduler started
+2025-10-24 18:47:39,099 - app.main - INFO - Application startup completed
+2025-10-24 18:47:47,768 - app.main - ERROR - Database health check failed: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-10-24 18:48:14,649 - app.main - ERROR - Database health check failed: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-10-24 18:48:14,773 - app.main - ERROR - Database health check failed: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
