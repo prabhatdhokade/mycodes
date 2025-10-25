@@ -1,0 +1,439 @@
+2025-10-24 16:26:12,990 - app.core.utils - INFO - Configuration loaded and validated: app/config/config.yaml
+2025-10-24 16:26:12,990 - app.core.utils - INFO - DataProcessor initialized successfully
+2025-10-24 16:26:12,990 - app.core.utils - INFO - Starting data processing pipeline
+2025-10-24 16:26:12,990 - app.core.utils - INFO - Reading 2 input files
+2025-10-24 16:26:12,998 - app.core.reader - INFO - Successfully read file: data/input_sales.csv (20 rows)
+2025-10-24 16:26:13,268 - app.core.reader - INFO - Successfully read file: data/input_customers.xlsx (9 rows)
+2025-10-24 16:26:13,269 - app.core.utils - INFO - File 1: data/input_sales.csv - 20 rows, 4 columns
+2025-10-24 16:26:13,269 - app.core.utils - INFO - File 2: data/input_customers.xlsx - 9 rows, 5 columns
+2025-10-24 16:26:13,269 - app.core.utils - INFO - Applying 8 operations
+2025-10-24 16:26:13,269 - app.core.utils - ERROR - Pipeline failed: Merge operation requires 'on' parameter specifying the column to merge on
+2025-10-24 16:26:13,269 - app.core.utils - ERROR - Unexpected error: Merge operation requires 'on' parameter specifying the column to merge on
+2025-10-24 16:26:48,620 - app.core.utils - INFO - Configuration loaded and validated: app/config/config.yaml
+2025-10-24 16:26:48,620 - app.core.utils - INFO - DataProcessor initialized successfully
+2025-10-24 16:26:48,620 - app.core.utils - INFO - Starting data processing pipeline
+2025-10-24 16:26:48,620 - app.core.utils - INFO - Reading 2 input files
+2025-10-24 16:26:48,638 - app.core.reader - INFO - Successfully read file: data/input_sales.csv (20 rows)
+2025-10-24 16:26:48,854 - app.core.reader - INFO - Successfully read file: data/input_customers.xlsx (9 rows)
+2025-10-24 16:26:48,854 - app.core.utils - INFO - File 1: data/input_sales.csv - 20 rows, 4 columns
+2025-10-24 16:26:48,855 - app.core.utils - INFO - File 2: data/input_customers.xlsx - 9 rows, 5 columns
+2025-10-24 16:26:48,855 - app.core.utils - INFO - Applying 8 operations
+2025-10-24 16:26:48,855 - app.core.utils - INFO - Executing operation 1/8: rename_columns
+2025-10-24 16:26:48,860 - app.core.operations - INFO - Renamed columns: {'customer_id': 'customer_id', 'product_name': 'product', 'sale_amount': 'amount', 'sale_date': 'date', 'customer_name': 'name', 'customer_email': 'email'}
+2025-10-24 16:26:48,860 - app.core.utils - INFO - Executing operation 2/8: filter_rows
+2025-10-24 16:26:48,866 - app.core.operations - INFO - Filtered rows with condition: amount > 5000 (10 rows remaining)
+2025-10-24 16:26:48,866 - app.core.utils - INFO - Executing operation 3/8: add_column
+2025-10-24 16:26:48,869 - app.core.operations - INFO - Added column 'total_with_tax' with formula: amount * 1.18
+2025-10-24 16:26:48,869 - app.core.utils - INFO - Executing operation 4/8: add_column
+2025-10-24 16:26:48,875 - app.core.operations - INFO - Added column 'profit_margin' with formula: amount * 0.15
+2025-10-24 16:26:48,875 - app.core.utils - INFO - Executing operation 5/8: drop_duplicates
+2025-10-24 16:26:48,881 - app.core.operations - INFO - Removed 0 duplicate rows
+2025-10-24 16:26:48,881 - app.core.utils - INFO - Executing operation 6/8: sort_data
+2025-10-24 16:26:48,882 - app.core.operations - INFO - Sorted data by ['amount'] (ascending=False)
+2025-10-24 16:26:48,882 - app.core.utils - INFO - Executing operation 7/8: merge
+2025-10-24 16:26:48,882 - app.core.utils - ERROR - Merge operation requires 'on' parameter. Skipping merge.
+2025-10-24 16:26:48,882 - app.core.utils - INFO - Executing operation 8/8: select_columns
+2025-10-24 16:26:48,884 - app.core.operations - ERROR - Error selecting columns: "['name', 'email'] not in index"
+2025-10-24 16:26:48,887 - app.core.utils - ERROR - Error in operation 8: "['name', 'email'] not in index"
+2025-10-24 16:26:48,888 - app.core.utils - ERROR - Pipeline failed: "['name', 'email'] not in index"
+2025-10-24 16:26:48,888 - app.core.utils - ERROR - Unexpected error: "['name', 'email'] not in index"
+2025-10-24 16:27:08,550 - app.core.utils - INFO - Configuration loaded and validated: app/config/config.yaml
+2025-10-24 16:27:08,555 - app.core.utils - INFO - DataProcessor initialized successfully
+2025-10-24 16:27:08,555 - app.core.utils - INFO - Starting data processing pipeline
+2025-10-24 16:27:08,555 - app.core.utils - INFO - Reading 2 input files
+2025-10-24 16:27:08,563 - app.core.reader - INFO - Successfully read file: data/input_sales.csv (20 rows)
+2025-10-24 16:27:08,809 - app.core.reader - INFO - Successfully read file: data/input_customers.xlsx (9 rows)
+2025-10-24 16:27:08,809 - app.core.utils - INFO - File 1: data/input_sales.csv - 20 rows, 4 columns
+2025-10-24 16:27:08,809 - app.core.utils - INFO - File 2: data/input_customers.xlsx - 9 rows, 5 columns
+2025-10-24 16:27:08,809 - app.core.utils - INFO - Applying 8 operations
+2025-10-24 16:27:08,810 - app.core.utils - INFO - Executing operation 1/8: rename_columns
+2025-10-24 16:27:08,814 - app.core.operations - INFO - Renamed columns: {'customer_id': 'customer_id', 'product_name': 'product', 'sale_amount': 'amount', 'sale_date': 'date', 'customer_name': 'name', 'customer_email': 'email'}
+2025-10-24 16:27:08,815 - app.core.utils - INFO - Executing operation 2/8: filter_rows
+2025-10-24 16:27:08,818 - app.core.operations - INFO - Filtered rows with condition: amount > 5000 (10 rows remaining)
+2025-10-24 16:27:08,818 - app.core.utils - INFO - Executing operation 3/8: add_column
+2025-10-24 16:27:08,824 - app.core.operations - INFO - Added column 'total_with_tax' with formula: amount * 1.18
+2025-10-24 16:27:08,825 - app.core.utils - INFO - Executing operation 4/8: add_column
+2025-10-24 16:27:08,831 - app.core.operations - INFO - Added column 'profit_margin' with formula: amount * 0.15
+2025-10-24 16:27:08,831 - app.core.utils - INFO - Executing operation 5/8: drop_duplicates
+2025-10-24 16:27:08,834 - app.core.operations - INFO - Removed 0 duplicate rows
+2025-10-24 16:27:08,834 - app.core.utils - INFO - Executing operation 6/8: sort_data
+2025-10-24 16:27:08,839 - app.core.operations - INFO - Sorted data by ['amount'] (ascending=False)
+2025-10-24 16:27:08,839 - app.core.utils - INFO - Executing operation 7/8: merge
+2025-10-24 16:27:08,839 - app.core.utils - ERROR - Merge operation requires 'on' parameter. Skipping merge.
+2025-10-24 16:27:08,839 - app.core.utils - INFO - Executing operation 8/8: select_columns
+2025-10-24 16:27:08,840 - app.core.operations - ERROR - Error selecting columns: "['name', 'email'] not in index"
+2025-10-24 16:27:08,840 - app.core.utils - ERROR - Error in operation 8: "['name', 'email'] not in index"
+2025-10-24 16:27:08,840 - app.core.utils - ERROR - Pipeline failed: "['name', 'email'] not in index"
+2025-10-24 16:27:08,840 - app.core.utils - ERROR - Unexpected error: "['name', 'email'] not in index"
+2025-10-24 16:27:20,341 - app.core.utils - INFO - Configuration loaded and validated: app/config/config.yaml
+2025-10-24 16:27:20,342 - app.core.utils - INFO - DataProcessor initialized successfully
+2025-10-24 16:27:20,342 - app.core.utils - INFO - Starting data processing pipeline
+2025-10-24 16:27:20,342 - app.core.utils - INFO - Reading 2 input files
+2025-10-24 16:27:20,349 - app.core.reader - INFO - Successfully read file: data/input_sales.csv (20 rows)
+2025-10-24 16:27:20,564 - app.core.reader - INFO - Successfully read file: data/input_customers.xlsx (9 rows)
+2025-10-24 16:27:20,564 - app.core.utils - INFO - File 1: data/input_sales.csv - 20 rows, 4 columns
+2025-10-24 16:27:20,564 - app.core.utils - INFO - File 2: data/input_customers.xlsx - 9 rows, 5 columns
+2025-10-24 16:27:20,564 - app.core.utils - INFO - Applying 8 operations
+2025-10-24 16:27:20,564 - app.core.utils - INFO - Executing operation 1/8: rename_columns
+2025-10-24 16:27:20,565 - app.core.operations - INFO - Renamed columns: {'customer_id': 'customer_id', 'product_name': 'product', 'sale_amount': 'amount', 'sale_date': 'date', 'customer_name': 'name', 'customer_email': 'email'}
+2025-10-24 16:27:20,565 - app.core.utils - INFO - Executing operation 2/8: filter_rows
+2025-10-24 16:27:20,567 - app.core.operations - INFO - Filtered rows with condition: amount > 5000 (10 rows remaining)
+2025-10-24 16:27:20,568 - app.core.utils - INFO - Executing operation 3/8: add_column
+2025-10-24 16:27:20,570 - app.core.operations - INFO - Added column 'total_with_tax' with formula: amount * 1.18
+2025-10-24 16:27:20,570 - app.core.utils - INFO - Executing operation 4/8: add_column
+2025-10-24 16:27:20,571 - app.core.operations - INFO - Added column 'profit_margin' with formula: amount * 0.15
+2025-10-24 16:27:20,572 - app.core.utils - INFO - Executing operation 5/8: drop_duplicates
+2025-10-24 16:27:20,573 - app.core.operations - INFO - Removed 0 duplicate rows
+2025-10-24 16:27:20,573 - app.core.utils - INFO - Executing operation 6/8: sort_data
+2025-10-24 16:27:20,573 - app.core.operations - INFO - Sorted data by ['amount'] (ascending=False)
+2025-10-24 16:27:20,573 - app.core.utils - INFO - Executing operation 7/8: merge
+2025-10-24 16:27:20,574 - app.core.utils - INFO - Merge operation details: on='None', how='left'
+2025-10-24 16:27:20,574 - app.core.utils - ERROR - Merge operation requires 'on' parameter. Skipping merge.
+2025-10-24 16:27:20,574 - app.core.utils - INFO - Executing operation 8/8: select_columns
+2025-10-24 16:27:20,574 - app.core.operations - ERROR - Error selecting columns: "['name', 'email'] not in index"
+2025-10-24 16:27:20,574 - app.core.utils - ERROR - Error in operation 8: "['name', 'email'] not in index"
+2025-10-24 16:27:20,574 - app.core.utils - ERROR - Pipeline failed: "['name', 'email'] not in index"
+2025-10-24 16:27:20,574 - app.core.utils - ERROR - Unexpected error: "['name', 'email'] not in index"
+2025-10-24 16:27:35,200 - app.core.utils - INFO - Configuration loaded and validated: app/config/test_config.yaml
+2025-10-24 16:27:35,202 - app.core.utils - INFO - DataProcessor initialized successfully
+2025-10-24 16:27:35,207 - app.core.utils - INFO - Starting data processing pipeline
+2025-10-24 16:27:35,207 - app.core.utils - INFO - Reading 2 input files
+2025-10-24 16:27:35,215 - app.core.reader - INFO - Successfully read file: data/input_sales.csv (20 rows)
+2025-10-24 16:27:35,415 - app.core.reader - INFO - Successfully read file: data/input_customers.xlsx (9 rows)
+2025-10-24 16:27:35,415 - app.core.utils - INFO - File 1: data/input_sales.csv - 20 rows, 4 columns
+2025-10-24 16:27:35,415 - app.core.utils - INFO - File 2: data/input_customers.xlsx - 9 rows, 5 columns
+2025-10-24 16:27:35,415 - app.core.utils - INFO - Applying 4 operations
+2025-10-24 16:27:35,415 - app.core.utils - INFO - Executing operation 1/4: rename_columns
+2025-10-24 16:27:35,420 - app.core.operations - INFO - Renamed columns: {'customer_id': 'customer_id', 'product_name': 'product', 'sale_amount': 'amount', 'sale_date': 'date'}
+2025-10-24 16:27:35,420 - app.core.utils - INFO - Executing operation 2/4: filter_rows
+2025-10-24 16:27:35,424 - app.core.operations - INFO - Filtered rows with condition: amount > 5000 (10 rows remaining)
+2025-10-24 16:27:35,428 - app.core.utils - INFO - Executing operation 3/4: add_column
+2025-10-24 16:27:35,431 - app.core.operations - INFO - Added column 'total_with_tax' with formula: amount * 1.18
+2025-10-24 16:27:35,431 - app.core.utils - INFO - Executing operation 4/4: merge
+2025-10-24 16:27:35,431 - app.core.utils - INFO - Merge operation details: on='None', how='left'
+2025-10-24 16:27:35,431 - app.core.utils - ERROR - Merge operation requires 'on' parameter. Skipping merge.
+2025-10-24 16:27:35,431 - app.core.utils - INFO - Operations completed. Final data: 10 rows, 5 columns
+2025-10-24 16:27:35,431 - app.core.utils - INFO - Writing output to csv: data/test_output.csv
+2025-10-24 16:27:35,436 - app.core.writer - INFO - Successfully wrote CSV file: data/test_output.csv (10 rows)
+2025-10-24 16:27:35,436 - app.core.utils - INFO - Successfully wrote 10 rows to data/test_output.csv
+2025-10-24 16:27:35,436 - app.core.utils - INFO - Data processing pipeline completed successfully
+2025-10-24 16:27:51,045 - app.core.utils - INFO - Configuration loaded and validated: app/config/test_config.yaml
+2025-10-24 16:27:51,045 - app.core.utils - INFO - DataProcessor initialized successfully
+2025-10-24 16:27:51,045 - app.core.utils - INFO - Starting data processing pipeline
+2025-10-24 16:27:51,045 - app.core.utils - INFO - Reading 2 input files
+2025-10-24 16:27:51,053 - app.core.reader - INFO - Successfully read file: data/input_sales.csv (20 rows)
+2025-10-24 16:27:51,288 - app.core.reader - INFO - Successfully read file: data/input_customers.xlsx (9 rows)
+2025-10-24 16:27:51,288 - app.core.utils - INFO - File 1: data/input_sales.csv - 20 rows, 4 columns
+2025-10-24 16:27:51,288 - app.core.utils - INFO - File 2: data/input_customers.xlsx - 9 rows, 5 columns
+2025-10-24 16:27:51,288 - app.core.utils - INFO - Applying 4 operations
+2025-10-24 16:27:51,288 - app.core.utils - INFO - Executing operation 1/4: rename_columns
+2025-10-24 16:27:51,289 - app.core.operations - INFO - Renamed columns: {'customer_id': 'customer_id', 'product_name': 'product', 'sale_amount': 'amount', 'sale_date': 'date'}
+2025-10-24 16:27:51,289 - app.core.utils - INFO - Executing operation 2/4: filter_rows
+2025-10-24 16:27:51,295 - app.core.operations - INFO - Filtered rows with condition: amount > 5000 (10 rows remaining)
+2025-10-24 16:27:51,295 - app.core.utils - INFO - Executing operation 3/4: add_column
+2025-10-24 16:27:51,297 - app.core.operations - INFO - Added column 'total_with_tax' with formula: amount * 1.18
+2025-10-24 16:27:51,301 - app.core.utils - INFO - Executing operation 4/4: merge
+2025-10-24 16:27:51,301 - app.core.utils - INFO - Full merge operation: {'type': 'merge', True: 'customer_id', 'how': 'left'}
+2025-10-24 16:27:51,301 - app.core.utils - INFO - Merge operation details: on='None', how='left'
+2025-10-24 16:27:51,301 - app.core.utils - ERROR - Merge operation requires 'on' parameter. Skipping merge.
+2025-10-24 16:27:51,301 - app.core.utils - INFO - Operations completed. Final data: 10 rows, 5 columns
+2025-10-24 16:27:51,301 - app.core.utils - INFO - Writing output to csv: data/test_output.csv
+2025-10-24 16:27:51,304 - app.core.writer - INFO - Successfully wrote CSV file: data/test_output.csv (10 rows)
+2025-10-24 16:27:51,304 - app.core.utils - INFO - Successfully wrote 10 rows to data/test_output.csv
+2025-10-24 16:27:51,304 - app.core.utils - INFO - Data processing pipeline completed successfully
+2025-10-24 16:27:59,421 - app.core.utils - INFO - Configuration loaded and validated: app/config/test_config.yaml
+2025-10-24 16:27:59,421 - app.core.utils - INFO - DataProcessor initialized successfully
+2025-10-24 16:27:59,423 - app.core.utils - INFO - Starting data processing pipeline
+2025-10-24 16:27:59,424 - app.core.utils - INFO - Reading 2 input files
+2025-10-24 16:27:59,431 - app.core.reader - INFO - Successfully read file: data/input_sales.csv (20 rows)
+2025-10-24 16:27:59,654 - app.core.reader - INFO - Successfully read file: data/input_customers.xlsx (9 rows)
+2025-10-24 16:27:59,654 - app.core.utils - INFO - File 1: data/input_sales.csv - 20 rows, 4 columns
+2025-10-24 16:27:59,654 - app.core.utils - INFO - File 2: data/input_customers.xlsx - 9 rows, 5 columns
+2025-10-24 16:27:59,655 - app.core.utils - INFO - Applying 4 operations
+2025-10-24 16:27:59,655 - app.core.utils - INFO - Executing operation 1/4: rename_columns
+2025-10-24 16:27:59,659 - app.core.operations - INFO - Renamed columns: {'customer_id': 'customer_id', 'product_name': 'product', 'sale_amount': 'amount', 'sale_date': 'date'}
+2025-10-24 16:27:59,660 - app.core.utils - INFO - Executing operation 2/4: filter_rows
+2025-10-24 16:27:59,666 - app.core.operations - INFO - Filtered rows with condition: amount > 5000 (10 rows remaining)
+2025-10-24 16:27:59,667 - app.core.utils - INFO - Executing operation 3/4: add_column
+2025-10-24 16:27:59,669 - app.core.operations - INFO - Added column 'total_with_tax' with formula: amount * 1.18
+2025-10-24 16:27:59,669 - app.core.utils - INFO - Executing operation 4/4: merge
+2025-10-24 16:27:59,669 - app.core.utils - INFO - Full merge operation: {'type': 'merge', True: 'customer_id', 'how': 'left'}
+2025-10-24 16:27:59,669 - app.core.utils - INFO - Merge operation details: on='None', how='left'
+2025-10-24 16:27:59,669 - app.core.utils - ERROR - Merge operation requires 'on' parameter. Skipping merge.
+2025-10-24 16:27:59,669 - app.core.utils - INFO - Operations completed. Final data: 10 rows, 5 columns
+2025-10-24 16:27:59,669 - app.core.utils - INFO - Writing output to csv: data/test_output.csv
+2025-10-24 16:27:59,675 - app.core.writer - INFO - Successfully wrote CSV file: data/test_output.csv (10 rows)
+2025-10-24 16:27:59,675 - app.core.utils - INFO - Successfully wrote 10 rows to data/test_output.csv
+2025-10-24 16:27:59,675 - app.core.utils - INFO - Data processing pipeline completed successfully
+2025-10-24 16:28:15,829 - app.core.utils - INFO - Configuration loaded and validated: app/config/test_config.yaml
+2025-10-24 16:28:15,829 - app.core.utils - INFO - DataProcessor initialized successfully
+2025-10-24 16:28:15,829 - app.core.utils - INFO - Starting data processing pipeline
+2025-10-24 16:28:15,829 - app.core.utils - INFO - Reading 2 input files
+2025-10-24 16:28:15,833 - app.core.reader - INFO - Successfully read file: data/input_sales.csv (20 rows)
+2025-10-24 16:28:15,941 - app.core.reader - INFO - Successfully read file: data/input_customers.xlsx (9 rows)
+2025-10-24 16:28:15,942 - app.core.utils - INFO - File 1: data/input_sales.csv - 20 rows, 4 columns
+2025-10-24 16:28:15,942 - app.core.utils - INFO - File 2: data/input_customers.xlsx - 9 rows, 5 columns
+2025-10-24 16:28:15,942 - app.core.utils - INFO - Applying 4 operations
+2025-10-24 16:28:15,942 - app.core.utils - INFO - Executing operation 1/4: rename_columns
+2025-10-24 16:28:15,943 - app.core.operations - INFO - Renamed columns: {'customer_id': 'customer_id', 'product_name': 'product', 'sale_amount': 'amount', 'sale_date': 'date'}
+2025-10-24 16:28:15,943 - app.core.utils - INFO - Executing operation 2/4: filter_rows
+2025-10-24 16:28:15,945 - app.core.operations - INFO - Filtered rows with condition: amount > 5000 (10 rows remaining)
+2025-10-24 16:28:15,945 - app.core.utils - INFO - Executing operation 3/4: add_column
+2025-10-24 16:28:15,949 - app.core.operations - INFO - Added column 'total_with_tax' with formula: amount * 1.18
+2025-10-24 16:28:15,950 - app.core.utils - INFO - Executing operation 4/4: merge
+2025-10-24 16:28:15,951 - app.core.utils - INFO - Full merge operation: {'type': 'merge', True: 'customer_id', 'how': 'left'}
+2025-10-24 16:28:15,952 - app.core.utils - INFO - Merge operation details: on='customer_id', how='left'
+2025-10-24 16:28:15,953 - app.core.utils - INFO - Merging DataFrames on column 'customer_id' using 'left' join
+2025-10-24 16:28:15,956 - app.core.operations - INFO - Merged 2 DataFrames on column 'customer_id' using 'left' join
+2025-10-24 16:28:15,957 - app.core.utils - INFO - Operations completed. Final data: 10 rows, 9 columns
+2025-10-24 16:28:15,958 - app.core.utils - INFO - Writing output to csv: data/test_output.csv
+2025-10-24 16:28:15,961 - app.core.writer - INFO - Successfully wrote CSV file: data/test_output.csv (10 rows)
+2025-10-24 16:28:15,963 - app.core.utils - INFO - Successfully wrote 10 rows to data/test_output.csv
+2025-10-24 16:28:15,963 - app.core.utils - INFO - Data processing pipeline completed successfully
+2025-10-24 16:28:50,865 - app.core.utils - INFO - Configuration loaded and validated: app/config/config.yaml
+2025-10-24 16:28:50,871 - app.core.utils - INFO - DataProcessor initialized successfully
+2025-10-24 16:28:50,871 - app.core.utils - INFO - Starting data processing pipeline
+2025-10-24 16:28:50,871 - app.core.utils - INFO - Reading 2 input files
+2025-10-24 16:28:50,876 - app.core.reader - INFO - Successfully read file: data/input_sales.csv (20 rows)
+2025-10-24 16:28:51,137 - app.core.reader - INFO - Successfully read file: data/input_customers.xlsx (9 rows)
+2025-10-24 16:28:51,141 - app.core.utils - INFO - File 1: data/input_sales.csv - 20 rows, 4 columns
+2025-10-24 16:28:51,142 - app.core.utils - INFO - File 2: data/input_customers.xlsx - 9 rows, 5 columns
+2025-10-24 16:28:51,142 - app.core.utils - INFO - Applying 8 operations
+2025-10-24 16:28:51,142 - app.core.utils - INFO - Executing operation 1/8: rename_columns
+2025-10-24 16:28:51,142 - app.core.operations - INFO - Renamed columns: {'customer_id': 'customer_id', 'product_name': 'product', 'sale_amount': 'amount', 'sale_date': 'date', 'customer_name': 'name', 'customer_email': 'email'}
+2025-10-24 16:28:51,143 - app.core.utils - INFO - Executing operation 2/8: filter_rows
+2025-10-24 16:28:51,145 - app.core.operations - INFO - Filtered rows with condition: amount > 5000 (10 rows remaining)
+2025-10-24 16:28:51,145 - app.core.utils - INFO - Executing operation 3/8: add_column
+2025-10-24 16:28:51,147 - app.core.operations - INFO - Added column 'total_with_tax' with formula: amount * 1.18
+2025-10-24 16:28:51,148 - app.core.utils - INFO - Executing operation 4/8: add_column
+2025-10-24 16:28:51,154 - app.core.operations - INFO - Added column 'profit_margin' with formula: amount * 0.15
+2025-10-24 16:28:51,154 - app.core.utils - INFO - Executing operation 5/8: drop_duplicates
+2025-10-24 16:28:51,155 - app.core.operations - INFO - Removed 0 duplicate rows
+2025-10-24 16:28:51,155 - app.core.utils - INFO - Executing operation 6/8: sort_data
+2025-10-24 16:28:51,160 - app.core.operations - INFO - Sorted data by ['amount'] (ascending=False)
+2025-10-24 16:28:51,160 - app.core.utils - INFO - Executing operation 7/8: merge
+2025-10-24 16:28:51,160 - app.core.utils - INFO - Merging DataFrames on column 'customer_id' using 'left' join
+2025-10-24 16:28:51,162 - app.core.operations - INFO - Merged 2 DataFrames on column 'customer_id' using 'left' join
+2025-10-24 16:28:51,162 - app.core.utils - INFO - Executing operation 8/8: select_columns
+2025-10-24 16:28:51,163 - app.core.operations - ERROR - Error selecting columns: "['name', 'email'] not in index"
+2025-10-24 16:28:51,163 - app.core.utils - ERROR - Error in operation 8: "['name', 'email'] not in index"
+2025-10-24 16:28:51,163 - app.core.utils - ERROR - Pipeline failed: "['name', 'email'] not in index"
+2025-10-24 16:28:51,163 - app.core.utils - ERROR - Unexpected error: "['name', 'email'] not in index"
+2025-10-24 16:29:15,040 - app.core.utils - INFO - Configuration loaded and validated: app/config/config.yaml
+2025-10-24 16:29:15,040 - app.core.utils - INFO - DataProcessor initialized successfully
+2025-10-24 16:29:15,040 - app.core.utils - INFO - Starting data processing pipeline
+2025-10-24 16:29:15,040 - app.core.utils - INFO - Reading 2 input files
+2025-10-24 16:29:15,048 - app.core.reader - INFO - Successfully read file: data/input_sales.csv (20 rows)
+2025-10-24 16:29:15,286 - app.core.reader - INFO - Successfully read file: data/input_customers.xlsx (9 rows)
+2025-10-24 16:29:15,286 - app.core.utils - INFO - File 1: data/input_sales.csv - 20 rows, 4 columns
+2025-10-24 16:29:15,286 - app.core.utils - INFO - File 2: data/input_customers.xlsx - 9 rows, 5 columns
+2025-10-24 16:29:15,286 - app.core.utils - INFO - Applying 8 operations
+2025-10-24 16:29:15,286 - app.core.utils - INFO - Executing operation 1/8: rename_columns
+2025-10-24 16:29:15,292 - app.core.operations - INFO - Renamed columns: {'customer_id': 'customer_id', 'product_name': 'product', 'sale_amount': 'amount', 'sale_date': 'date', 'customer_name': 'name', 'customer_email': 'email'}
+2025-10-24 16:29:15,292 - app.core.utils - INFO - Executing operation 2/8: filter_rows
+2025-10-24 16:29:15,295 - app.core.operations - INFO - Filtered rows with condition: amount > 5000 (10 rows remaining)
+2025-10-24 16:29:15,295 - app.core.utils - INFO - Executing operation 3/8: add_column
+2025-10-24 16:29:15,301 - app.core.operations - INFO - Added column 'total_with_tax' with formula: amount * 1.18
+2025-10-24 16:29:15,301 - app.core.utils - INFO - Executing operation 4/8: add_column
+2025-10-24 16:29:15,307 - app.core.operations - INFO - Added column 'profit_margin' with formula: amount * 0.15
+2025-10-24 16:29:15,307 - app.core.utils - INFO - Executing operation 5/8: drop_duplicates
+2025-10-24 16:29:15,308 - app.core.operations - INFO - Removed 0 duplicate rows
+2025-10-24 16:29:15,313 - app.core.utils - INFO - Executing operation 6/8: sort_data
+2025-10-24 16:29:15,313 - app.core.operations - INFO - Sorted data by ['amount'] (ascending=False)
+2025-10-24 16:29:15,313 - app.core.utils - INFO - Executing operation 7/8: merge
+2025-10-24 16:29:15,314 - app.core.utils - INFO - Merging DataFrames on column 'customer_id' using 'left' join
+2025-10-24 16:29:15,316 - app.core.operations - INFO - Merged 2 DataFrames on column 'customer_id' using 'left' join
+2025-10-24 16:29:15,316 - app.core.utils - INFO - Executing operation 8/8: select_columns
+2025-10-24 16:29:15,317 - app.core.operations - INFO - Selected columns: ['customer_id', 'customer_name', 'customer_email', 'product', 'amount', 'total_with_tax', 'profit_margin', 'date']
+2025-10-24 16:29:15,317 - app.core.utils - INFO - Operations completed. Final data: 10 rows, 8 columns
+2025-10-24 16:29:15,317 - app.core.utils - INFO - Writing output to csv: data/processed_output.csv
+2025-10-24 16:29:15,321 - app.core.writer - INFO - Successfully wrote CSV file: data/processed_output.csv (10 rows)
+2025-10-24 16:29:15,321 - app.core.utils - INFO - Successfully wrote 10 rows to data/processed_output.csv
+2025-10-24 16:29:15,321 - app.core.utils - INFO - Data processing pipeline completed successfully
+2025-10-24 16:29:27,239 - app.core.utils - INFO - Configuration loaded and validated: app/config/config_sqlite.yaml
+2025-10-24 16:29:27,243 - app.core.utils - INFO - DataProcessor initialized successfully
+2025-10-24 16:29:27,243 - app.core.utils - INFO - Starting data processing pipeline
+2025-10-24 16:29:27,243 - app.core.utils - INFO - Reading 2 input files
+2025-10-24 16:29:27,252 - app.core.reader - INFO - Successfully read file: data/input_sales.csv (20 rows)
+2025-10-24 16:29:27,471 - app.core.reader - INFO - Successfully read file: data/input_customers.xlsx (9 rows)
+2025-10-24 16:29:27,472 - app.core.utils - INFO - File 1: data/input_sales.csv - 20 rows, 4 columns
+2025-10-24 16:29:27,472 - app.core.utils - INFO - File 2: data/input_customers.xlsx - 9 rows, 5 columns
+2025-10-24 16:29:27,472 - app.core.utils - INFO - Applying 7 operations
+2025-10-24 16:29:27,472 - app.core.utils - INFO - Executing operation 1/7: rename_columns
+2025-10-24 16:29:27,475 - app.core.operations - INFO - Renamed columns: {'customer_id': 'customer_id', 'product_name': 'product', 'sale_amount': 'amount', 'sale_date': 'date', 'customer_name': 'name', 'customer_email': 'email'}
+2025-10-24 16:29:27,475 - app.core.utils - INFO - Executing operation 2/7: filter_rows
+2025-10-24 16:29:27,478 - app.core.operations - INFO - Filtered rows with condition: amount > 10000 (7 rows remaining)
+2025-10-24 16:29:27,484 - app.core.utils - INFO - Executing operation 3/7: add_column
+2025-10-24 16:29:27,487 - app.core.operations - INFO - Added column 'total_with_tax' with formula: amount * 1.18
+2025-10-24 16:29:27,491 - app.core.utils - INFO - Executing operation 4/7: add_column
+2025-10-24 16:29:27,494 - app.core.operations - INFO - Added column 'commission' with formula: amount * 0.05
+2025-10-24 16:29:27,494 - app.core.utils - INFO - Executing operation 5/7: merge
+2025-10-24 16:29:27,494 - app.core.utils - INFO - Merging DataFrames on column 'customer_id' using 'inner' join
+2025-10-24 16:29:27,534 - app.core.operations - INFO - Merged 2 DataFrames on column 'customer_id' using 'inner' join
+2025-10-24 16:29:27,535 - app.core.utils - INFO - Executing operation 6/7: aggregate
+2025-10-24 16:29:27,537 - app.core.operations - ERROR - Error aggregating data: 'name'
+2025-10-24 16:29:27,537 - app.core.utils - ERROR - Error in operation 6: 'name'
+2025-10-24 16:29:27,537 - app.core.utils - ERROR - Pipeline failed: 'name'
+2025-10-24 16:29:27,537 - app.core.utils - ERROR - Unexpected error: 'name'
+2025-10-24 16:29:42,557 - app.core.utils - INFO - Configuration loaded and validated: app/config/config_sqlite.yaml
+2025-10-24 16:29:42,558 - app.core.utils - INFO - DataProcessor initialized successfully
+2025-10-24 16:29:42,558 - app.core.utils - INFO - Starting data processing pipeline
+2025-10-24 16:29:42,558 - app.core.utils - INFO - Reading 2 input files
+2025-10-24 16:29:42,564 - app.core.reader - INFO - Successfully read file: data/input_sales.csv (20 rows)
+2025-10-24 16:29:42,738 - app.core.reader - INFO - Successfully read file: data/input_customers.xlsx (9 rows)
+2025-10-24 16:29:42,741 - app.core.utils - INFO - File 1: data/input_sales.csv - 20 rows, 4 columns
+2025-10-24 16:29:42,742 - app.core.utils - INFO - File 2: data/input_customers.xlsx - 9 rows, 5 columns
+2025-10-24 16:29:42,742 - app.core.utils - INFO - Applying 7 operations
+2025-10-24 16:29:42,743 - app.core.utils - INFO - Executing operation 1/7: rename_columns
+2025-10-24 16:29:42,745 - app.core.operations - INFO - Renamed columns: {'customer_id': 'customer_id', 'product_name': 'product', 'sale_amount': 'amount', 'sale_date': 'date', 'customer_name': 'name', 'customer_email': 'email'}
+2025-10-24 16:29:42,745 - app.core.utils - INFO - Executing operation 2/7: filter_rows
+2025-10-24 16:29:42,748 - app.core.operations - INFO - Filtered rows with condition: amount > 10000 (7 rows remaining)
+2025-10-24 16:29:42,748 - app.core.utils - INFO - Executing operation 3/7: add_column
+2025-10-24 16:29:42,751 - app.core.operations - INFO - Added column 'total_with_tax' with formula: amount * 1.18
+2025-10-24 16:29:42,752 - app.core.utils - INFO - Executing operation 4/7: add_column
+2025-10-24 16:29:42,755 - app.core.operations - INFO - Added column 'commission' with formula: amount * 0.05
+2025-10-24 16:29:42,755 - app.core.utils - INFO - Executing operation 5/7: merge
+2025-10-24 16:29:42,756 - app.core.utils - INFO - Merging DataFrames on column 'customer_id' using 'inner' join
+2025-10-24 16:29:42,760 - app.core.operations - INFO - Merged 2 DataFrames on column 'customer_id' using 'inner' join
+2025-10-24 16:29:42,760 - app.core.utils - INFO - Executing operation 6/7: aggregate
+2025-10-24 16:29:42,767 - app.core.operations - INFO - Aggregated data by ['customer_id', 'customer_name', 'customer_email'] with functions: {'amount': 'sum', 'total_with_tax': 'sum', 'commission': 'sum', 'product': 'count'}
+2025-10-24 16:29:42,769 - app.core.utils - INFO - Executing operation 7/7: sort_data
+2025-10-24 16:29:42,769 - app.core.operations - INFO - Sorted data by ['amount'] (ascending=False)
+2025-10-24 16:29:42,769 - app.core.utils - INFO - Operations completed. Final data: 6 rows, 7 columns
+2025-10-24 16:29:42,769 - app.core.utils - INFO - Writing output to sqlite: data/processed_data.db
+2025-10-24 16:29:42,770 - app.core.writer - ERROR - Error writing data: No module named 'app.core.db'
+2025-10-24 16:29:42,770 - app.core.utils - ERROR - Pipeline failed: No module named 'app.core.db'
+2025-10-24 16:29:42,770 - app.core.utils - ERROR - Unexpected error: No module named 'app.core.db'
+2025-10-24 16:29:54,967 - app.core.utils - INFO - Configuration loaded and validated: app/config/config_sqlite.yaml
+2025-10-24 16:29:54,967 - app.core.utils - INFO - DataProcessor initialized successfully
+2025-10-24 16:29:54,967 - app.core.utils - INFO - Starting data processing pipeline
+2025-10-24 16:29:54,967 - app.core.utils - INFO - Reading 2 input files
+2025-10-24 16:29:54,972 - app.core.reader - INFO - Successfully read file: data/input_sales.csv (20 rows)
+2025-10-24 16:29:55,225 - app.core.reader - INFO - Successfully read file: data/input_customers.xlsx (9 rows)
+2025-10-24 16:29:55,226 - app.core.utils - INFO - File 1: data/input_sales.csv - 20 rows, 4 columns
+2025-10-24 16:29:55,226 - app.core.utils - INFO - File 2: data/input_customers.xlsx - 9 rows, 5 columns
+2025-10-24 16:29:55,226 - app.core.utils - INFO - Applying 7 operations
+2025-10-24 16:29:55,226 - app.core.utils - INFO - Executing operation 1/7: rename_columns
+2025-10-24 16:29:55,226 - app.core.operations - INFO - Renamed columns: {'customer_id': 'customer_id', 'product_name': 'product', 'sale_amount': 'amount', 'sale_date': 'date', 'customer_name': 'name', 'customer_email': 'email'}
+2025-10-24 16:29:55,226 - app.core.utils - INFO - Executing operation 2/7: filter_rows
+2025-10-24 16:29:55,235 - app.core.operations - INFO - Filtered rows with condition: amount > 10000 (7 rows remaining)
+2025-10-24 16:29:55,235 - app.core.utils - INFO - Executing operation 3/7: add_column
+2025-10-24 16:29:55,242 - app.core.operations - INFO - Added column 'total_with_tax' with formula: amount * 1.18
+2025-10-24 16:29:55,242 - app.core.utils - INFO - Executing operation 4/7: add_column
+2025-10-24 16:29:55,249 - app.core.operations - INFO - Added column 'commission' with formula: amount * 0.05
+2025-10-24 16:29:55,249 - app.core.utils - INFO - Executing operation 5/7: merge
+2025-10-24 16:29:55,249 - app.core.utils - INFO - Merging DataFrames on column 'customer_id' using 'inner' join
+2025-10-24 16:29:55,255 - app.core.operations - INFO - Merged 2 DataFrames on column 'customer_id' using 'inner' join
+2025-10-24 16:29:55,255 - app.core.utils - INFO - Executing operation 6/7: aggregate
+2025-10-24 16:29:55,265 - app.core.operations - INFO - Aggregated data by ['customer_id', 'customer_name', 'customer_email'] with functions: {'amount': 'sum', 'total_with_tax': 'sum', 'commission': 'sum', 'product': 'count'}
+2025-10-24 16:29:55,265 - app.core.utils - INFO - Executing operation 7/7: sort_data
+2025-10-24 16:29:55,266 - app.core.operations - INFO - Sorted data by ['amount'] (ascending=False)
+2025-10-24 16:29:55,266 - app.core.utils - INFO - Operations completed. Final data: 6 rows, 7 columns
+2025-10-24 16:29:55,266 - app.core.utils - INFO - Writing output to sqlite: data/processed_data.db
+2025-10-24 16:29:55,271 - app.db.db_manager - INFO - Connected to database: data/processed_data.db
+2025-10-24 16:29:55,293 - app.db.db_manager - INFO - Successfully wrote 6 rows to table 'high_value_customers'
+2025-10-24 16:29:55,293 - app.core.writer - INFO - Successfully wrote to SQLite: data/processed_data.db table 'high_value_customers' (6 rows)
+2025-10-24 16:29:55,293 - app.db.db_manager - INFO - Database connection closed
+2025-10-24 16:29:55,293 - app.core.utils - INFO - Successfully wrote 6 rows to data/processed_data.db
+2025-10-24 16:29:55,293 - app.core.utils - INFO - Data processing pipeline completed successfully
+2025-10-24 16:30:07,475 - app.core.utils - INFO - Configuration loaded and validated: app/config/config_excel.yaml
+2025-10-24 16:30:07,476 - app.core.utils - INFO - DataProcessor initialized successfully
+2025-10-24 16:30:07,476 - app.core.utils - INFO - Starting data processing pipeline
+2025-10-24 16:30:07,476 - app.core.utils - INFO - Reading 1 input files
+2025-10-24 16:30:07,479 - app.core.reader - INFO - Successfully read file: data/input_sales.csv (20 rows)
+2025-10-24 16:30:07,479 - app.core.utils - INFO - File 1: data/input_sales.csv - 20 rows, 4 columns
+2025-10-24 16:30:07,479 - app.core.utils - INFO - Applying 8 operations
+2025-10-24 16:30:07,479 - app.core.utils - INFO - Executing operation 1/8: rename_columns
+2025-10-24 16:30:07,480 - app.core.operations - INFO - Renamed columns: {'customer_id': 'customer_id', 'product_name': 'product', 'sale_amount': 'amount', 'sale_date': 'date'}
+2025-10-24 16:30:07,480 - app.core.utils - INFO - Executing operation 2/8: drop_nulls
+2025-10-24 16:30:07,481 - app.core.operations - INFO - Removed 0 rows with null values
+2025-10-24 16:30:07,481 - app.core.utils - INFO - Executing operation 3/8: add_column
+2025-10-24 16:30:07,484 - app.core.operations - INFO - Added column 'total_with_tax' with formula: amount * 1.18
+2025-10-24 16:30:07,485 - app.core.utils - INFO - Executing operation 4/8: add_column
+2025-10-24 16:30:07,487 - app.core.operations - INFO - Added column 'discount_amount' with formula: amount * 0.1
+2025-10-24 16:30:07,488 - app.core.utils - INFO - Executing operation 5/8: add_column
+2025-10-24 16:30:07,528 - app.core.operations - INFO - Added column 'final_amount' with formula: total_with_tax - discount_amount
+2025-10-24 16:30:07,578 - app.core.utils - INFO - Executing operation 6/8: drop_duplicates
+2025-10-24 16:30:07,640 - app.core.operations - INFO - Removed 1 duplicate rows
+2025-10-24 16:30:07,651 - app.core.utils - INFO - Executing operation 7/8: sort_data
+2025-10-24 16:30:07,652 - app.core.operations - INFO - Sorted data by ['date'] (ascending=True)
+2025-10-24 16:30:07,652 - app.core.utils - INFO - Executing operation 8/8: apply_function
+2025-10-24 16:30:07,653 - app.core.operations - INFO - Applied function 'upper' to column 'product'
+2025-10-24 16:30:07,653 - app.core.utils - INFO - Operations completed. Final data: 19 rows, 7 columns
+2025-10-24 16:30:07,653 - app.core.utils - INFO - Writing output to excel: data/processed_sales_report.xlsx
+2025-10-24 16:30:07,801 - app.core.writer - INFO - Successfully wrote Excel file: data/processed_sales_report.xlsx (19 rows)
+2025-10-24 16:30:07,801 - app.core.utils - INFO - Successfully wrote 19 rows to data/processed_sales_report.xlsx
+2025-10-24 16:30:07,801 - app.core.utils - INFO - Data processing pipeline completed successfully
+2025-10-24 16:32:27,712 - app.core.utils - INFO - Configuration loaded and validated: app/config/config.yaml
+2025-10-24 16:32:27,712 - app.core.utils - INFO - DataProcessor initialized successfully
+2025-10-24 16:32:27,712 - app.core.utils - INFO - Starting data processing pipeline
+2025-10-24 16:32:27,712 - app.core.utils - INFO - Reading 2 input files
+2025-10-24 16:32:27,717 - app.core.reader - INFO - Successfully read file: data/input_sales.csv (20 rows)
+2025-10-24 16:32:27,839 - app.core.reader - INFO - Successfully read file: data/input_customers.xlsx (9 rows)
+2025-10-24 16:32:27,841 - app.core.utils - INFO - File 1: data/input_sales.csv - 20 rows, 4 columns
+2025-10-24 16:32:27,841 - app.core.utils - INFO - File 2: data/input_customers.xlsx - 9 rows, 5 columns
+2025-10-24 16:32:27,841 - app.core.utils - INFO - Applying 8 operations
+2025-10-24 16:32:27,841 - app.core.utils - INFO - Executing operation 1/8: rename_columns
+2025-10-24 16:32:27,842 - app.core.operations - INFO - Renamed columns: {'customer_id': 'customer_id', 'product_name': 'product', 'sale_amount': 'amount', 'sale_date': 'date', 'customer_name': 'name', 'customer_email': 'email'}
+2025-10-24 16:32:27,842 - app.core.utils - INFO - Executing operation 2/8: filter_rows
+2025-10-24 16:32:27,847 - app.core.operations - INFO - Filtered rows with condition: amount > 5000 (10 rows remaining)
+2025-10-24 16:32:27,848 - app.core.utils - INFO - Executing operation 3/8: add_column
+2025-10-24 16:32:27,854 - app.core.operations - INFO - Added column 'total_with_tax' with formula: amount * 1.18
+2025-10-24 16:32:27,855 - app.core.utils - INFO - Executing operation 4/8: add_column
+2025-10-24 16:32:27,857 - app.core.operations - INFO - Added column 'profit_margin' with formula: amount * 0.15
+2025-10-24 16:32:27,857 - app.core.utils - INFO - Executing operation 5/8: drop_duplicates
+2025-10-24 16:32:27,859 - app.core.operations - INFO - Removed 0 duplicate rows
+2025-10-24 16:32:27,860 - app.core.utils - INFO - Executing operation 6/8: sort_data
+2025-10-24 16:32:27,862 - app.core.operations - INFO - Sorted data by ['amount'] (ascending=False)
+2025-10-24 16:32:27,863 - app.core.utils - INFO - Executing operation 7/8: merge
+2025-10-24 16:32:27,864 - app.core.utils - INFO - Merging DataFrames on column 'customer_id' using 'left' join
+2025-10-24 16:32:27,868 - app.core.operations - INFO - Merged 2 DataFrames on column 'customer_id' using 'left' join
+2025-10-24 16:32:27,868 - app.core.utils - INFO - Executing operation 8/8: select_columns
+2025-10-24 16:32:27,869 - app.core.operations - INFO - Selected columns: ['customer_id', 'customer_name', 'customer_email', 'product', 'amount', 'total_with_tax', 'profit_margin', 'date']
+2025-10-24 16:32:27,869 - app.core.utils - INFO - Operations completed. Final data: 10 rows, 8 columns
+2025-10-24 16:32:27,869 - app.core.utils - INFO - Writing output to csv: data/processed_output.csv
+2025-10-24 16:32:27,873 - app.core.writer - INFO - Successfully wrote CSV file: data/processed_output.csv (10 rows)
+2025-10-24 16:32:27,874 - app.core.utils - INFO - Successfully wrote 10 rows to data/processed_output.csv
+2025-10-24 16:32:27,875 - app.core.utils - INFO - Data processing pipeline completed successfully
+2025-10-24 16:32:27,876 - app.core.utils - INFO - Starting data processing pipeline
+2025-10-24 16:32:27,876 - app.core.utils - INFO - Reading 1 input files
+2025-10-24 16:32:27,878 - app.core.reader - INFO - Successfully read file: data/input_sales.csv (20 rows)
+2025-10-24 16:32:27,878 - app.core.utils - INFO - File 1: data/input_sales.csv - 20 rows, 4 columns
+2025-10-24 16:32:27,878 - app.core.utils - INFO - Applying 4 operations
+2025-10-24 16:32:27,879 - app.core.utils - INFO - Executing operation 1/4: rename_columns
+2025-10-24 16:32:27,879 - app.core.operations - INFO - Renamed columns: {'sale_amount': 'amount'}
+2025-10-24 16:32:27,879 - app.core.utils - INFO - Executing operation 2/4: filter_rows
+2025-10-24 16:32:27,881 - app.core.operations - INFO - Filtered rows with condition: amount > 10000 (7 rows remaining)
+2025-10-24 16:32:27,881 - app.core.utils - INFO - Executing operation 3/4: add_column
+2025-10-24 16:32:27,882 - app.core.operations - INFO - Added column 'total_with_tax' with formula: amount * 1.18
+2025-10-24 16:32:27,883 - app.core.utils - INFO - Executing operation 4/4: sort_data
+2025-10-24 16:32:27,883 - app.core.operations - INFO - Sorted data by amount (ascending=False)
+2025-10-24 16:32:27,883 - app.core.utils - INFO - Operations completed. Final data: 7 rows, 5 columns
+2025-10-24 16:32:27,883 - app.core.utils - INFO - Writing output to csv: data/demo_output.csv
+2025-10-24 16:32:27,884 - app.core.writer - INFO - Successfully wrote CSV file: data/demo_output.csv (7 rows)
+2025-10-24 16:32:27,884 - app.core.utils - INFO - Successfully wrote 7 rows to data/demo_output.csv
+2025-10-24 16:32:27,884 - app.core.utils - INFO - Data processing pipeline completed successfully
+2025-10-24 16:32:27,884 - app.core.utils - INFO - Starting data processing pipeline
+2025-10-24 16:32:27,885 - app.core.utils - INFO - Reading 2 input files
+2025-10-24 16:32:27,886 - app.core.reader - INFO - Successfully read file: data/input_sales.csv (20 rows)
+2025-10-24 16:32:27,894 - app.core.reader - INFO - Successfully read file: data/input_customers.xlsx (9 rows)
+2025-10-24 16:32:27,894 - app.core.utils - INFO - File 1: data/input_sales.csv - 20 rows, 4 columns
+2025-10-24 16:32:27,894 - app.core.utils - INFO - File 2: data/input_customers.xlsx - 9 rows, 5 columns
+2025-10-24 16:32:27,894 - app.core.utils - INFO - Applying 4 operations
+2025-10-24 16:32:27,894 - app.core.utils - INFO - Executing operation 1/4: rename_columns
+2025-10-24 16:32:27,895 - app.core.operations - INFO - Renamed columns: {'sale_amount': 'amount'}
+2025-10-24 16:32:27,895 - app.core.utils - INFO - Executing operation 2/4: filter_rows
+2025-10-24 16:32:27,897 - app.core.operations - INFO - Filtered rows with condition: amount > 5000 (10 rows remaining)
+2025-10-24 16:32:27,897 - app.core.utils - INFO - Executing operation 3/4: merge
+2025-10-24 16:32:27,897 - app.core.utils - INFO - Merging DataFrames on column 'customer_id' using 'left' join
+2025-10-24 16:32:27,899 - app.core.operations - INFO - Merged 2 DataFrames on column 'customer_id' using 'left' join
+2025-10-24 16:32:27,899 - app.core.utils - INFO - Executing operation 4/4: add_column
+2025-10-24 16:32:27,906 - app.core.operations - INFO - Added column 'total_with_tax' with formula: amount * 1.18
+2025-10-24 16:32:27,906 - app.core.utils - INFO - Operations completed. Final data: 10 rows, 9 columns
+2025-10-24 16:32:27,906 - app.core.utils - INFO - Writing output to sqlite: data/demo_output.db
+2025-10-24 16:32:27,907 - app.db.db_manager - INFO - Connected to database: data/demo_output.db
+2025-10-24 16:32:27,921 - app.db.db_manager - INFO - Successfully wrote 10 rows to table 'demo_data'
+2025-10-24 16:32:27,921 - app.core.writer - INFO - Successfully wrote to SQLite: data/demo_output.db table 'demo_data' (10 rows)
+2025-10-24 16:32:27,921 - app.db.db_manager - INFO - Database connection closed
+2025-10-24 16:32:27,921 - app.core.utils - INFO - Successfully wrote 10 rows to data/demo_output.db
+2025-10-24 16:32:27,921 - app.core.utils - INFO - Data processing pipeline completed successfully

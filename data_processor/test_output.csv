@@ -1,0 +1,4 @@
+customer_id,product_name,sale_amount,sale_date,customer_name,customer_email
+1001,Laptop,1000,2024-01-01,John,john@email.com
+1002,Mouse,50,2024-01-02,Jane,jane@email.com
+1003,Keyboard,100,2024-01-03,Bob,bob@email.com
