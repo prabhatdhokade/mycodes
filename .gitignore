@@ -1,2 +1,18 @@
 Coding Preparation/Basics CPP/LearnC++.exe
 .bin
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Personal Research Assistant runtime artifacts
+personal_research_assistant/data/*.json
+personal_research_assistant/data/*.log
+personal_research_assistant/data/*.log.*
+personal_research_assistant/.env
