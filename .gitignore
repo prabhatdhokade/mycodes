@@ -1,2 +1,6 @@
 Coding Preparation/Basics CPP/LearnC++.exe
 .bin
+__pycache__/
+.pytest_cache/
+*.py[cod]
+personal_research_assistant/runtime/
