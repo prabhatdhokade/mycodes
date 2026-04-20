@@ -1,0 +1,15 @@
+# Core
+pydantic>=2.5.0
+python-dotenv>=1.0.0
+
+# LLM (optional - the agent falls back to a deterministic mock if no key)
+openai>=1.30.0
+
+# UI
+streamlit>=1.30.0
+
+# HTTP (for web search tools, optional)
+requests>=2.31.0
+
+# Testing
+pytest>=8.0.0
