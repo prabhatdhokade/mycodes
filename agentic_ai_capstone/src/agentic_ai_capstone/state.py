@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from copy import deepcopy
 from datetime import datetime, timezone
 from typing import Any, Optional, TypedDict
 
@@ -62,6 +63,19 @@ def append_message(state: CustomerSupportState, role: str, content: str) -> None
             "timestamp_utc": utc_now(),
         }
     )
+
+
+def with_message(state: CustomerSupportState, role: str, content: str) -> CustomerSupportState:
+    """Compatibility helper: append message and return state."""
+    append_message(state, role, content)
+    return state
+
+
+def clone_state(state: CustomerSupportState | None) -> CustomerSupportState:
+    """Return a deep-copy of state for safe per-turn mutation."""
+    if state is None:
+        raise ValueError("clone_state requires a non-null state")
+    return deepcopy(state)
 
 
 def latest_user_message(state: CustomerSupportState) -> str:

@@ -13,6 +13,11 @@ class CustomerSupportSystem:
     """Convenience facade for app/demo/test use."""
 
     engine: CustomerSupportEngine
+    _session_states: dict[str, dict] = None
+
+    def __post_init__(self) -> None:
+        if self._session_states is None:
+            self._session_states = {}
 
     def respond(
         self,
@@ -20,11 +25,15 @@ class CustomerSupportSystem:
         user_message: str,
         human_approval: bool = False,
     ) -> dict[str, Any]:
-        return self.engine.respond(
+        prior_state = self._session_states.get(customer_id)
+        result = self.engine.respond(
             customer_id=customer_id,
             user_message=user_message,
             human_approval=human_approval,
+            prior_state=prior_state,
         )
+        self._session_states[customer_id] = result["state"]
+        return result
 
     def handle(
         self,

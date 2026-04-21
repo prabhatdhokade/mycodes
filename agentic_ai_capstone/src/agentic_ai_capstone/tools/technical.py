@@ -14,6 +14,8 @@ def run_diagnostics(context: ToolContext, customer_id: str) -> dict[str, Any]:
     return {
         "customer_id": customer_id,
         "health": "warning" if packet_loss_pct else "ok",
+        # Keep both keys for compatibility with test and agent formatting.
+        "packet_loss": packet_loss_pct,
         "packet_loss_pct": packet_loss_pct,
         "detail": (
             "Packet loss detected on region edge"

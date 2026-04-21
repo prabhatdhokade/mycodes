@@ -1,2 +1,5 @@
 Coding Preparation/Basics CPP/LearnC++.exe
 .bin
+__pycache__/
+*.py[cod]
+*.egg-info/

@@ -24,6 +24,8 @@ class TriageRouter:
         content = text.lower()
         if any(k in content for k in ("refund", "return", "money back", "chargeback")):
             return RoutingResult("refund", 0.97, "refund intent")
+        if any(k in content for k in ("ticket", "escalate", "cannot connect", "can't connect")):
+            return RoutingResult("technical", 0.95, "technical escalation intent")
         if any(k in content for k in ("invoice", "payment", "billing", "plan", "card")):
             return RoutingResult("billing", 0.94, "billing intent")
         if any(

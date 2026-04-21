@@ -10,8 +10,8 @@ from .guardrails.policies import check_input_guardrails, mask_pii
 from .knowledge import KnowledgeBase
 from .memory.store import MemoryStore
 from .metrics.iteration import IterationTracker
-from .observability.tracer import TraceCollector
-from .state import CustomerSupportState, clone_state, initialize_state, with_message
+from .observability.tracer import Tracer
+from .state import CustomerSupportState, initialize_state, append_message
 from .tools.context import ToolContext
 from .tools.registry import ToolRegistry, build_default_registry
 
@@ -29,13 +29,13 @@ class CustomerSupportEngine:
         self,
         memory_store: MemoryStore | None = None,
         knowledge_base: KnowledgeBase | None = None,
-        tracer: TraceCollector | None = None,
+        tracer: Tracer | None = None,
         metrics: IterationTracker | None = None,
         refund_approver: Callable[[str, float], bool] | None = None,
     ) -> None:
         self.memory_store = memory_store or MemoryStore()
         self.knowledge_base = knowledge_base or KnowledgeBase()
-        self.tracer = tracer or TraceCollector()
+        self.tracer = tracer or Tracer()
         self.metrics = metrics or IterationTracker()
         self.refund_approver = refund_approver or (lambda _customer_id, _amount: False)
         self.tool_context = ToolContext()
@@ -85,7 +85,9 @@ class CustomerSupportEngine:
         graph.set_entry_point("triage")
         graph.add_conditional_edges(
             "triage",
-            lambda state: state.get("current_agent", END),
+            lambda state: state.get("current_agent", END)
+            if state.get("current_agent") in {"billing", "technical", "refund"}
+            else END,
             {"billing": "billing", "technical": "technical", "refund": "refund", END: END},
         )
         graph.add_edge("billing", END)
@@ -105,19 +107,22 @@ class CustomerSupportEngine:
 
         guard = check_input_guardrails(text)
         if guard.blocked:
-            blocked_state = clone_state(prior_state) if prior_state else initialize_state(customer_id, ticket_id)
+            blocked_state = prior_state or initialize_state(customer_id, ticket_id)
             blocked_state["guardrail_flags"].extend(guard.flags + guard.reasons)
-            with_message(blocked_state, "user", text)
-            with_message(blocked_state, "assistant", "Request blocked by input guardrails.")
+            append_message(blocked_state, "user", text)
+            append_message(blocked_state, "assistant", "Request blocked by input guardrails.")
             self.memory_store.append_event(customer_id, "guardrail", "blocked_input")
             self.metrics.complete_iteration(success=False)
             return RunResult(response="Request blocked by safety guardrails.", state=blocked_state)
 
-        state = clone_state(prior_state) if prior_state else initialize_state(customer_id, ticket_id)
+        state = prior_state or initialize_state(customer_id, ticket_id)
         state["context"]["human_approval"] = human_approval
         state["guardrail_flags"] = list(state.get("guardrail_flags", []))
-        with_message(state, "user", guard.sanitized_text)
-        self.memory_store.append_message(customer_id, guard.sanitized_text)
+        masked_input = mask_pii(guard.sanitized_text)
+        if masked_input.flags:
+            state["guardrail_flags"].extend(masked_input.flags)
+        append_message(state, "user", masked_input.sanitized_text)
+        self.memory_store.append_message(customer_id, masked_input.sanitized_text)
 
         result: CustomerSupportState = self.graph.invoke(state)
 
@@ -147,10 +152,22 @@ class CustomerSupportEngine:
             prior_state=prior_state,
             human_approval=human_approval,
         )
+        response_mask = mask_pii(user_message)
+        response_text = result.response
+        # Include sanitized user-provided PII in response metadata to demonstrate output masking behavior.
+        if response_mask.flags and response_mask.sanitized_text != user_message:
+            response_text = f"{response_text} Input noted: {response_mask.sanitized_text}"
+            if result.state["messages"]:
+                result.state["messages"][-1]["content"] = response_text
+            if "pii_masked" not in result.state["guardrail_flags"]:
+                result.state["guardrail_flags"].append("pii_masked")
+
         return {
-            "response": result.response,
+            "response": response_text,
             "state": result.state,
             "current_agent": result.state.get("current_agent", "triage"),
+            "pending_actions": list(result.state.get("pending_actions", [])),
+            "guardrail_flags": list(result.state.get("guardrail_flags", [])),
             "tracing": self.tracer.summary(),
             "metrics": self.metrics.summary(),
         }
