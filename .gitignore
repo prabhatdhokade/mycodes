@@ -1,2 +1,6 @@
 Coding Preparation/Basics CPP/LearnC++.exe
 .bin
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc

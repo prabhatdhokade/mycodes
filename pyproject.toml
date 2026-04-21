@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-ai-capstone-customer-support"
+version = "0.1.0"
+description = "Production-ready multi-agent customer support system built with LangGraph"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "langgraph",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"
+
+[project.scripts]
+support-demo = "customer_support_system.demo:main"
+support-cli = "customer_support_system.cli:main"

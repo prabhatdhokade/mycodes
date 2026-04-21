@@ -1,0 +1,3 @@
+[console_scripts]
+support-cli = customer_support_system.cli:main
+support-demo = customer_support_system.demo:main
