@@ -4,3 +4,4 @@ Coding Preparation/Basics CPP/LearnC++.exe
 __pycache__/
 .pytest_cache/
 *.pyc
+*.egg-info/

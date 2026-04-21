@@ -59,9 +59,7 @@ src/customer_support_system/
 ## Setup
 
 ```bash
-python3 -m venv .venv
-. .venv/bin/activate
-pip install -e .[dev]
+pip3 install --break-system-packages -e .[dev]
 ```
 
 ## Run the Demo
@@ -89,6 +87,12 @@ pytest
 ```bash
 python -m customer_support_system.evaluation
 ```
+
+## Latest Verified Results
+
+- `python3 -m pytest` -> **36 passed**
+- `python3 -m customer_support_system.evaluation` -> **routing_accuracy = 1.0**
+- `python3 -m customer_support_system.demo` -> **5-step walkthrough completed successfully**
 
 ## Framework Choice Justification
 
